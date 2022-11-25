@@ -26,7 +26,7 @@ summation(4)                    //n+2 = O(n)
 >When time complexity grows in direct proportion to the size of the input                   = O(n) linear 
 >When time complexity grows directly proportional to the square of the size of the input    = O(n^2) Quadratic e.g two loops
 >When time complexity grows directly proportional to the cube of the size of the input      = O(n^3) cubic e.g three loops
->Input size reduced by half every iteration                                                 = O(logn) logarithmic e.g Divide and Conquer algorithms 
+>Input size reduced by half every iteration                                                 = O(log n) logarithmic e.g Divide and Conquer algorithms 
 >When time complexity gets doubled after every addition in the input                        = O(2^n) Exponential e.g In recursive functions & In Brute-Force algorithms these are used in cryptography as attacking methods to defeat password protection by trying random strings until they find the correct password that unlocks the system
 
 🐝 Objects Time Complexity:
@@ -57,7 +57,7 @@ Big O Notation describe the complexity of an algorithm using algebric terms.
 
 Algorithm doesn't need extra space but the space needed does not depends on the input size (ex. salting)  = O(1) constant 
 Where extra space needed as the imput size grows                                                          = O(n) linear
-Where extra space needed as the imput size grows but not at the same rate as input size                   = O(logn) logarithmic
+Where extra space needed as the imput size grows but not at the same rate as input size                   = O(log n) logarithmic
 */
 
 
@@ -653,10 +653,89 @@ const insertionSort = (array) => {
 console.log(insertionSort([8, 2, 4, 1, 3]));
 
 //==============================================================================================================================
+/* Q.21 Quick Sort - Pivot point with recursion 
+Steps: here pivot point will be last element
+Case: 1 [-6, 20, 8, -2, 4] pivot = 4
+Case: 2 Divide in left and right where left ones are smaller than pivot and right ones greater than pivot
+                left   Pivot  right              
+              [-6, -2] , 4 , [20, 8] 
+
+Case: 3        left   Pivot  right              left   Pivot  right              
+                [-6] , -2 ,  []                   [] , 8 , [20] 
+
+Case: 4        [ -6, -2, 4, 8, 20 ]
+*/
+const quickSort = (arr) => {
+  if (arr.length < 2) {
+    return arr
+  }
+  let pivot = arr[arr.length - 1];
+  let left = [], right = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i])
+    } else {
+      right.push(arr[i])
+    }
+  }
+  return [...quickSort(left), pivot, ...quickSort(right)]
+}
+console.log(quickSort([-6, 20, 8, -2, 4]));  //Time Complexity: O(n log n) because we recursively divide the array into smaller arrays O(log n) and a for-loop which is O(n)
+
+//==============================================================================================================================
+/* Q.22 Merge Sort - Divide until you left with subarrays with one element
+Steps: here pivot point will be last element
+Case: 1 [-6, 20, 8, -2, 4]
+Case: 2 [-6, 20]  [8, -2, 4]            
+Case: 3 [-6] [20]  [8]  [-2, 4] 
+Case: 4 [-6] [20]  [8]  [-2]  [4] 
+Case: 5 Now take in pairs of subarrays
+      [-6] [20] => []          left & right are not empty, compare and push the smaller one in new array -6 < 20
+      []  [20] =>  [-6]        Left is empty push right array
+      []  []  => [-6, 20]
+
+Case: 6 Same with next pair
+      [8] [-2, 4] => []        left & right are not empty, compare and push the smaller one in new array -2 < 8
+      [8]  [4] =>  [-2]        left & right are not empty, compare and push the smaller one in new array 4 < 8
+      [8]  []  => [-2, 4]      Right is empty, push left
+      []  []  => [-2, 4, 8]
+
+Case: 7 Same with last pair
+      [-6, 20] [-2, 4, 8] => []    left & right are not empty, compare and push the smaller one in new array -6 < -2
+      [20] [-2, 4, 8] =>  [-6]     left & right are not empty, compare and push the smaller one in new array -2 < 20
+      [20] [4, 8]  => [-6, -2]     left & right are not empty, compare and push the smaller one in new array 4 < 20
+      [20] [8]  => [-6, -2, 4]     left & right are not empty, compare and push the smaller one in new array 8 < 20
+      [20] []  => [-6, -2, 4, 8]   Right is empty, push left
+      [] []  => [-6, -2, 4, 8, 20] 
+*/
+const mergeSort = (arr) => {
+  if (arr.length < 2)
+    return arr
+
+  const mid = Math.floor(arr.length / 2)
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
+  return merge(mergeSort(left), mergeSort(right))
+}
+
+function merge(left, right) {
+  const sortedArr = [];
+  while (left.length && right.length) {       //upto not empty
+    if (left[0] <= right[0]) {
+      sortedArr.push(left.shift())            //use shift() as to delete from previous position
+    } else {
+      sortedArr.push(right.shift())
+    }
+  }
+  return [...sortedArr, ...left, ...right]    //merge leftover subarray elements
+}
+
+console.log(mergeSort([-6, 20, 8, -2, 4]));   //Time Complexity: O(n log n)
+
+//==============================================================================================================================
 /* Q.21 Find the maximum occurence characters in a string
 */
 //==============================================================================================================================
-
 
 const maxCharacters = (str) => {
   const alpha = {};
@@ -741,10 +820,10 @@ console.log(removeEvenRaw([4, 1, 9, 10, 15, 22, 5, 14]));
 /* Q.24 Valid Parentheses
 Input: s = "()[]{}"
 Output: true
-
+ 
 Input: s = "(]"
 Output: false
-
+ 
 */
 //==============================================================================================================================
 
@@ -884,7 +963,7 @@ for (let i = 1; i <= n; i++) {
 
 //==============================================================================================================================
 /* Q.30 Birthday Candles: You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.
-
+ 
 Input: [3,2,1,3]
 Output: 2
 The maximum height candles are 4 units high. There are 2 of them, so return 2.
