@@ -28,6 +28,7 @@ summation(4)                    //n+2 = O(n)
 >When time complexity grows directly proportional to the cube of the size of the input      = O(n^3) cubic e.g three loops
 >Input size reduced by half every iteration                                                 = O(log n) logarithmic e.g Divide and Conquer algorithms 
 >When time complexity gets doubled after every addition in the input                        = O(2^n) Exponential e.g In recursive functions & In Brute-Force algorithms these are used in cryptography as attacking methods to defeat password protection by trying random strings until they find the correct password that unlocks the system
+>Two different sizes of loop                                                                = O(m*n)
 
 🐝 Objects Time Complexity:
 Insert                                                              = O(1)
@@ -680,7 +681,7 @@ const quickSort = (arr) => {
   }
   return [...quickSort(left), pivot, ...quickSort(right)]
 }
-console.log(quickSort([-6, 20, 8, -2, 4]));  //Time Complexity: O(n log n) because we recursively divide the array into smaller arrays O(log n) and a for-loop which is O(n)
+console.log(quickSort([-6, 20, 8, -2, 4]));  //Time Complexity: O(n log n) because we recursively divide the array into smaller arrays O(log n) and a for-loop which is O(n) and its the best sorting algo
 
 //==============================================================================================================================
 /* Q.22 Merge Sort - Divide until you left with subarrays with one element
@@ -1016,3 +1017,23 @@ function fibonacci(n) {
   return fibonacci(n - 1) + fibonacci(n - 2)
 }
 console.log(fibonacci(6))         //Time Complexity: O(2^n)
+
+
+//==============================================================================================================================
+/* Q.32 Tower of Hanoi (see image) is a mathematical puzzle where we have three rods(A, B, and C) and N disks.Initially, all the disks are stacked in decreasing value of diameter i.e., the smallest disk is placed on the top and they are on rod A.The objective of the puzzle is to move the entire stack to another rod(here considered C), obeying the following simple rules:
+
+-Only one disk can be moved at a time.
+-Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack i.e.a disk can only be moved if it is the uppermost disk on a stack.
+-No disk may be placed on top of a smaller disk.
+*/
+//==============================================================================================================================
+function towerOfHanoi(n, fromRod, usingRod, toRod) {
+  if (n === 1) {
+    console.log(`Move disk 1 from ${fromRod} to ${toRod}`)
+    return
+  }
+  towerOfHanoi(n - 1, fromRod, toRod, usingRod)
+  console.log(`Move disk ${n} from ${fromRod} to ${toRod}`)
+  towerOfHanoi(n - 1, usingRod, fromRod, toRod)
+}
+towerOfHanoi(3, "A", "B", "C")     
