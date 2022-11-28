@@ -556,7 +556,7 @@ console.log(res);
 //==============================================================================================================================
 /* Q.17 Linear Search Algorithm
 */
-//==============================================================================================================================
+//======================================  ========================================================================================
 
 const users = [{ username: "sagar", email: "sagar@gmail.com" },
 { username: "prateek", email: "prateek@gmail.com" },
@@ -1027,13 +1027,19 @@ console.log(fibonacci(6))         //Time Complexity: O(2^n)
 -No disk may be placed on top of a smaller disk.
 */
 //==============================================================================================================================
-function towerOfHanoi(n, fromRod, usingRod, toRod) {
+/*
+    Shift ‘N-1’ disks from ‘A’ to ‘B’, using C.
+    Shift last disk from ‘A’ to ‘C’.
+    Shift ‘N-1’ disks from ‘B’ to ‘C’, using A.
+Time Complexity: O(2^n)
+*/
+function towerOfHanoi(n, fromRod, usingRod, toRod) {        //A B C
   if (n === 1) {
     console.log(`Move disk 1 from ${fromRod} to ${toRod}`)
     return
   }
-  towerOfHanoi(n - 1, fromRod, toRod, usingRod)
+  towerOfHanoi(n - 1, fromRod, toRod, usingRod) //A C B
   console.log(`Move disk ${n} from ${fromRod} to ${toRod}`)
-  towerOfHanoi(n - 1, usingRod, fromRod, toRod)
+  towerOfHanoi(n - 1, usingRod, fromRod, toRod) //B A C
 }
-towerOfHanoi(3, "A", "B", "C")     
+towerOfHanoi(3, "A", "B", "C")    
