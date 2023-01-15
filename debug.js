@@ -1,73 +1,26 @@
-// class Node {
-//     constructor(value) {
-//         this.value = value
-//         this.next = null
-//     }
-// }
-
-// class LinkedList {
-//     constructor() {
-//         this.head = null
-//         this.size = 0
-//     }
-
-//     isEmpty() {
-//         return this.size === 0
-//     }
-
-//     getSize() {
-//         return this.size
-//     }
-//     //O(1)
-//     prepend(value) {
-//         const node = new Node(value)
-//         if (this.isEmpty()) {
-//             this.head = node
-//         } else {
-//             node.next = this.head       //shifting head to next and new value to head
-//             this.head = node
-//         }
-//         this.size++
-//     }
-
-//     print() {
-//         if (this.isEmpty()) {
-//             console.log('List is Empty')
-//         } else {
-//             let curr = this.head
-//             let list = ''
-//             while (curr) {
-//                 list += `${curr.value} `
-//                 curr = curr.next
-//             }
-//             console.log(list)
-//         }
-//     }
-//     O(n)
-//     append(value) {
-//         const node = new Node(value)
-//         if (this.isEmpty()) {
-//             this.head = node
-//         } else {
-//             let prev = this.head
-//             while (prev.next) {
-//                 prev = prev.next
-//             }
-//             prev.next = node
-//         }
-//         this.size++
-//     }
-// }
-
-// let linkedlist = new LinkedList()
-// console.log(linkedlist.isEmpty())
-// linkedlist.prepend(10)
-// linkedlist.prepend(20)
-// linkedlist.prepend(30)
-// linkedlist.print()
 
 
-function num(num = num + 1) {
-    return num;
+function migratoryBirds(arr) {
+    arr = arr.sort((a, b) => a - b);
+    let result = [0, 0];
+    for (let i = 0; i < arr.length; i++) {
+        let count = 1
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+                count += 1
+            }
+        }
+
+        if (count > result[0]) {
+            result[0] = count;
+            result[1] = arr[i]
+        }
+
+    }
+    return result[1]
+
 }
-console.log(num(5))
+
+console.log(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]))
+
+// [1, 4 ,4 ,4 ,5 ,3]
