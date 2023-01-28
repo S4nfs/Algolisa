@@ -1,4 +1,6 @@
 /*Welcome to my 100+ DSA question series. ⚠️Avoid using javascript pre-defined functions as much as possible becoz Data Structure is all about learning the core functionalities of a given language. Let's Start with basics...
+
+Please ignore all debug files, they are only for testing purpose.
 Credits: https://towardsdatascience.com/essential-programming-time-complexity-a95bb2608cac
 
  Algorithm is basically the steps to do anything
@@ -1044,7 +1046,7 @@ towerOfHanoi(3, "A", "B", "C")
 
 
 //==============================================================================================================================/*
-/* Q.32 Hourglass - Given a 2D Array, Print the largest (maximum) hourglass sum found in
+/* Q.33 Hourglass - Given a 2D Array, Print the largest (maximum) hourglass sum found in
 Sample Input: 1 1 1 0 0 0
               0 1 0 0 0 0
               1 1 1 0 0 0
@@ -1078,4 +1080,69 @@ console.log(hourglassSum([
   , [0, 0, 1, 2, 4, 0]
 ]))
 
+//==============================================================================================================================/*
+/* Q.34 Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been spotted that maximum amount, return the smallest of their ids.
 
+Example
+There are two each of types 1 and 2 below, and one sighting of type 3. Pick the lower of the two types seen twice: type 1.
+
+Sample Input: 1 1 2 2 3
+Sample Output: 1
+
+Sample Input: 1 4 4 4 5 3
+Sample Output: 4
+
+*///==============================================================================================================================
+
+function migratoryBirds(arr) {
+  arr = arr.sort((a, b) => a - b);
+  let result = [0, 0];
+  for (let i = 0; i < arr.length; i++) {
+    let count = 1
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] == arr[j]) {
+        count += 1
+      }
+    }
+
+    if (count > result[0]) {
+      result[0] = count;
+      result[1] = arr[i]
+    }
+
+  }
+  return result[1]
+
+}
+
+//==============================================================================================================================/*
+/* Q.35 Sam is a professor at the university and likes to round each student's grade according to these rules:
+-If the difference between the grade and the next multiple of 5 is less than 3, round grade up to the next multiple of 5.
+-If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
+
+Examples
+84 round to 85(85 - 84 is less than 3)
+29 do not round (result is less than 40)
+57 do not round (60 - 57 is 3 or higher) 
+
+Sample Input: [73,67,38,33]
+
+Sample Output: [ 75, 67, 40, 33 ]
+
+
+*///==============================================================================================================================
+function gradingStudents(grades) {
+  let num = []
+  for (let g = 0; g < grades.length; g++) {
+    let nextNum = Math.ceil(grades[g] / 5) * 5
+    if ((grades[g] >= 38) && ((nextNum - grades[g]) < 3)) {
+      num[num.length] = nextNum //or num = [...num, nextNum]  or  num.splice(num, 0 , nextNum)
+    } else {
+      num[num.length] = grades[g]
+    }
+  }
+  return num
+
+}
+
+console.log(gradingStudents([73, 67, 38, 33]))
