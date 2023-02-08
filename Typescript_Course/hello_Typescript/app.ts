@@ -11,6 +11,7 @@ add(30, 5.2, true, "Result is: ");
 
 //The key difference is: javascript uses "dynamic types" resolved at (runtime) whereas Typescript uses "static types" set during (development)
 
+//🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞
 //✔️Typescript work flawless when checking errors, repeat "flawless". Lets see other data types like touple
 const person: {
   name: string;
@@ -32,6 +33,7 @@ console.log(person);
 //     console.log(a.map((element) => element ))  //❌ will not throw error in normal js in build time
 // }
 
+//🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞
 //✔️An enum is a special "class" that represents a group of constants (unchangeable variables). Comes in two flavors string and numeric
 enum Role {
   Enterprise,
@@ -43,3 +45,40 @@ console.log(Role.Enterprise); //0
 console.log(Role.Admin); //44
 console.log(Role.Moderator); //45
 console.log(Role.Client); //"client"
+
+//✔️Union type "|"
+const sum = (n1: number | string, n2: number | string) => {
+  let res;
+  if (typeof n1 === "number" && typeof n2 === "number") {
+    res = n1 + n2;
+  } else {
+    res = n1.toString() + n2.toString();
+  }
+  return res;
+};
+console.log(sum("30", "20"));
+
+//✔️types in Functions🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞
+let addNumbers = (n1: number, n2: number): number => {
+  //ensure the return type should be number
+  return n1 + n2;
+};
+
+function printResult(num: number): void {
+  //void as it did not return anything
+  console.log("Result in function is: ", num);
+}
+
+printResult(addNumbers(8, 8));
+let iWantToUseThatFunction: (a: number, b: number) => number; //function types allow us to describe which type of functions specifically we want to use somewhere with expected value in parameters that matches
+iWantToUseThatFunction = addNumbers;
+console.log(iWantToUseThatFunction(8, 8));
+
+//callbacks
+function addHandle(n1: number, n2: number, cb: (num: number) => void) {
+  const result = n1 + n2;
+  cb(result);
+}
+addHandle(22, 22, (result) => {
+  console.log(result);
+});
