@@ -26,10 +26,10 @@ summation(4)                    //n+2 = O(n)
 
 >When time complexity is constant independently to the size of the input                    = O(1) constant
 >When time complexity grows in direct proportion to the size of the input                   = O(n) linear 
->When time complexity grows directly proportional to the square of the size of the input    = O(n^2) Quadratic e.g two loops
+>When time complexity grows directly proportional to the square of the size of the input    = O(n^2) Quadratic e.g two nested loops
 >When time complexity grows directly proportional to the cube of the size of the input      = O(n^3) cubic e.g three loops
 >Input size reduced by half every iteration                                                 = O(log n) logarithmic e.g Divide and Conquer algorithms 
->When time complexity gets doubled after every addition in the input                        = O(2^n) Exponential e.g In recursive functions & In Brute-Force algorithms these are used in cryptography as attacking methods to defeat password protection by trying random strings until they find the correct password that unlocks the system
+>When time complexity gets doubled after every addition in the input                        = O(2^n) Exponential e.g two independent loops. In recursive functions & In Brute-Force algorithms these are used in cryptography as attacking methods to defeat password protection by trying random strings until they find the correct password that unlocks the system
 >Two different sizes of loop                                                                = O(m*n)
 
 🐝 Objects Time Complexity:

@@ -82,3 +82,10 @@ function addHandle(n1: number, n2: number, cb: (num: number) => void) {
 addHandle(22, 22, (result) => {
   console.log(result);
 });
+
+const infiniteLoop = (): never => {
+  while (true) {
+    console.log("TO THE INFINITY & BEYOND");
+  }
+};
+infiniteLoop();

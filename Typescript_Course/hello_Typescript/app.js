@@ -68,3 +68,9 @@ function addHandle(n1, n2, cb) {
 addHandle(22, 22, function (result) {
     console.log(result);
 });
+var infiniteLoop = function () {
+    while (true) {
+        console.log("TO THE INFINITY & BEYOND");
+    }
+};
+infiniteLoop();
