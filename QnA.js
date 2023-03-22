@@ -1,7 +1,9 @@
 /*Welcome to my 100+ DSA question series. ⚠️Avoid using javascript pre-defined functions as much as possible becoz Data Structure is all about learning the core functionalities of a given language. Let's Start with basics...
 
 Please ignore all debug files, they are only for testing purpose.
-Credits: https://towardsdatascience.com/essential-programming-time-complexity-a95bb2608cac
+Credits: 
+https://towardsdatascience.com/essential-programming-time-complexity-a95bb2608cac
+Event Loop Simulator: http://latentflip.com/loupe
 
  Algorithm is basically the steps to do anything
 🍯-Time Complexity - is mainly calculated by counting the number of steps to finish the execution
