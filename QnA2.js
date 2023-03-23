@@ -73,3 +73,52 @@ console.log(parking.getSlots())
 console.log(parking.park("Car-10"))
 console.log(parking.getSize())
 console.log(parking.getAvailable())
+
+//===================================================================================================================
+/* Q2. Who Is The Oldest ?
+This function will receive an array of objects. Each object will represent a person
+with a name and an age property. The function should return the name of the
+person who is oldest.
+
+If the array is empty, the function should return "no people found"
+Note: all people will have different ages.
+
+Examples:
+findOldestPerson ([
+{ name: 'Liam', age: 28 },
+{ name:
+'Eli', age: 37 },
+{ name:
+'Poonam', age: 22 },
+{ name:
+'Cameron', age: 32 }
+]);
+Should return 'Eli'
+findOldestPerson ([]);
+Should return 'no people found'
+*///=================================================================================================================
+
+function findOldest(persons) {
+    let a = 0; let result = ''
+    if (persons.length == 0) console.log("EMPTY")
+    else {
+        persons.forEach((person) => {
+            if (person.age > a) {
+                result = person.name
+                a = person.age
+            }
+        })
+        console.log("MAXIMUM AGED", result)
+    }
+    // let oldest = persons.reduce(function (prev, current) {
+    //     return (prev.age > current.age) ? prev : current
+    // })
+    // return oldest.name
+}
+
+
+console.log(findOldest([{ name: "liam", age: 22 },
+{ name: "sagar", age: 24 },
+{ name: "vishal", age: 20 },
+{ name: "arnish", age: 29 },
+{ name: "brian", age: 18 }]))
