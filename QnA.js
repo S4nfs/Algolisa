@@ -4,6 +4,7 @@ Please ignore all debug files, they are only for testing purpose.
 Credits: 
 https://towardsdatascience.com/essential-programming-time-complexity-a95bb2608cac
 Event Loop Simulator: http://latentflip.com/loupe
+Visualisation of Algorithms: https://www.cs.usfca.edu/
 
  Algorithm is basically the steps to do anything
 🍯-Time Complexity - is mainly calculated by counting the number of steps to finish the execution
