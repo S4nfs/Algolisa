@@ -5,6 +5,7 @@ Credits:
 https://towardsdatascience.com/essential-programming-time-complexity-a95bb2608cac
 Event Loop Simulator: http://latentflip.com/loupe
 Visualisation of Algorithms: https://www.cs.usfca.edu/
+Visualisation of Algorithms: https://visualgo.net/en/sorting?slide=6-11
 
  Algorithm is basically the steps to do anything
 🍯-Time Complexity - is mainly calculated by counting the number of steps to finish the execution
@@ -347,12 +348,12 @@ console.log(isAnagram('hello', 'llheo'));
 // o(n) linear time complexity 
 
 
-//==============================================================================================================================
+//===========================================================================================================================
 /* Q.11 Count Unique Numbers
 Input: [1,1,2,2,3,3,4,5,6,8,8]
 Output: 8
 
-*///==============================================================================================================================
+*///=========================================================================================================================
 function CountUnique(array) {
   let i = 0;
   if (array.length > 0) {
@@ -375,7 +376,7 @@ console.log(CountUnique([1, 1, 2, 2, 3, 3, 4, 5, 6, 7, 8, 8]));
 Input: [1,2,3,4,3,5,4,6,7,8]
 Output: 25
 
-*///==============================================================================================================================
+*///==========================================================================================================================
 
 //7 times the outer loop to be executed so the formula is :
 // Total - num + 1 = loop
@@ -458,12 +459,12 @@ function search(arr, target, left, right) {
 }
 console.log(BinSearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 9)); //Time Complexity Binary o(log(n))
 
-//==============================================================================================================================
+//============================================================================================================================
 /* Q.14 Checking square in another array
 Input: [1,2,3,4] [1,9,4,16]
 Output: true
 
-*///==============================================================================================================================
+*///==========================================================================================================================
 
 function isSquare(array1, array2) {
   for (let i = 0; i < array1.length; i++) {
@@ -486,22 +487,21 @@ console.log(isSquare([1, 2, 3, 4], [1, 9, 4, 16]))
 // const isSquareCheck = (arr1,arr2) =>  arr1.every(arr => arr2.includes(arr * arr))
 // console.log(isSquareCheck([1,2,3,4],[1,9,4,16]))
 
-//==============================================================================================================================
+//==========================================================================================================================
 /* Q.15 Recursive Function
 // const f = n => n <= 1 ? 1 : n * f(n - 1);
 // let g = f(4)
 // console.log(g)
+*///========================================================================================================================
 
-*///==============================================================================================================================
 
-
-//==============================================================================================================================
+//==========================================================================================================================
 /* Q.15 Sorting using simple Recursive Function
 Input: [2,3,1,4]
 case1: [2,1,3,4]
 Output: [1,2,3,4]
 
-*///==============================================================================================================================
+*///========================================================================================================================
 
 let i = 0, j = 1, myarray = [2, 3, 1, 4], newarray = [];
 
@@ -555,10 +555,9 @@ function findOdd(array) {
 const res = findOdd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 console.log(res);
 
-//==============================================================================================================================
+//==========================================================================================================================
 /* Q.17 Linear Search Algorithm
-*/
-//======================================  ========================================================================================
+*///========================================================================================================================
 
 const users = [{ username: "sagar", email: "sagar@gmail.com" },
 { username: "prateek", email: "prateek@gmail.com" },
@@ -577,10 +576,9 @@ function letsSearch(array, val) {
 console.log(letsSearch(users, 'ajay'));
 
 
-//==============================================================================================================================
+//===========================================================================================================================
 /* Q.18 Bubble Sort - a sorting algorithm where the largest values bubble up at the top [left -> right]
-
-*///==============================================================================================================================
+*///=========================================================================================================================
 
 /*
 Time Complexity: O(n^2)
@@ -601,17 +599,17 @@ console.log(bubbleSort([5, 3, 4, 1, 2, 8, 6, 7]));
 //==============================================================================================================================
 /* Q.19 Selection Sort -  sorts an array by repeatedly finding the minimum element from unsorted part and putting it at the beginning
 https://visualgo.net/en/sorting?slide=6-11  || Go-ahead & search
- 
+
 Steps: Consider first element as smallest (Pointer)
-         P
+       P
 Case 1: [0, 2, 34, 22, 10, 19]  - No Change
-            P
+          P
 Case 2: [0, 2, 34, 22, 10, 19]  - No Change
-                P  min                   P      min              
+              P  min                   P      min              
 Case 3: [0, 2, 34, 22, 10, 19] , [0, 2, 34, 22, 10, 19] , [0, 2, 10, 22, 34, 19]  - change
-                    P  min                   P      min              
+                  P  min                   P      min              
 Case 4: [0, 2, 10, 22, 34, 19] , [0, 2, 10, 22, 34, 19] , [0, 2, 10, 19, 34, 22]  - change
-                        P  min                  
+                      P  min                  
 Case 5: [0, 2, 10, 19, 34, 22] , [0, 2, 10, 19, 22, 34] - change
 
 *///==============================================================================================================================
@@ -636,10 +634,9 @@ function SelectionSort(array) {
 
 console.log(SelectionSort([0, 2, 34, 22, 10, 19]))
 
-//==============================================================================================================================
+//==========================================================================================================================
 /* Q.20 Insertion Sort - VIP 2nd element, Assume first element is sorted || Backwaters
-
-*///==============================================================================================================================
+*///========================================================================================================================
 const insertionSort = (array) => {
   for (i = 1; i < array.length; i++) {
     let curr = array[i];
@@ -660,11 +657,11 @@ console.log(insertionSort([8, 2, 4, 1, 3]));
 Steps: here pivot point will be last element
 Case: 1 [-6, 20, 8, -2, 4] pivot = 4
 Case: 2 Divide in left and right where left ones are smaller than pivot and right ones greater than pivot
-                left   Pivot  right              
-              [-6, -2] , 4 , [20, 8] 
+              left   Pivot  right              
+            [-6, -2] , 4 , [20, 8] 
 
 Case: 3        left   Pivot  right              left   Pivot  right              
-                [-6] , -2 ,  []                   [] , 8 , [20] 
+              [-6] , -2 ,  []                   [] , 8 , [20] 
 
 Case: 4        [ -6, -2, 4, 8, 20 ]
 */
@@ -693,23 +690,23 @@ Case: 2 [-6, 20]  [8, -2, 4]
 Case: 3 [-6] [20]  [8]  [-2, 4] 
 Case: 4 [-6] [20]  [8]  [-2]  [4] 
 Case: 5 Now take in pairs of subarrays
-      [-6] [20] => []          left & right are not empty, compare and push the smaller one in new array -6 < 20
-      []  [20] =>  [-6]        Left is empty push right array
-      []  []  => [-6, 20]
+    [-6] [20] => []          left & right are not empty, compare and push the smaller one in new array -6 < 20
+    []  [20] =>  [-6]        Left is empty push right array
+    []  []  => [-6, 20]
 
 Case: 6 Same with next pair
-      [8] [-2, 4] => []        left & right are not empty, compare and push the smaller one in new array -2 < 8
-      [8]  [4] =>  [-2]        left & right are not empty, compare and push the smaller one in new array 4 < 8
-      [8]  []  => [-2, 4]      Right is empty, push left
-      []  []  => [-2, 4, 8]
+    [8] [-2, 4] => []        left & right are not empty, compare and push the smaller one in new array -2 < 8
+    [8]  [4] =>  [-2]        left & right are not empty, compare and push the smaller one in new array 4 < 8
+    [8]  []  => [-2, 4]      Right is empty, push left
+    []  []  => [-2, 4, 8]
 
 Case: 7 Same with last pair
-      [-6, 20] [-2, 4, 8] => []    left & right are not empty, compare and push the smaller one in new array -6 < -2
-      [20] [-2, 4, 8] =>  [-6]     left & right are not empty, compare and push the smaller one in new array -2 < 20
-      [20] [4, 8]  => [-6, -2]     left & right are not empty, compare and push the smaller one in new array 4 < 20
-      [20] [8]  => [-6, -2, 4]     left & right are not empty, compare and push the smaller one in new array 8 < 20
-      [20] []  => [-6, -2, 4, 8]   Right is empty, push left
-      [] []  => [-6, -2, 4, 8, 20] 
+    [-6, 20] [-2, 4, 8] => []    left & right are not empty, compare and push the smaller one in new array -6 < -2
+    [20] [-2, 4, 8] =>  [-6]     left & right are not empty, compare and push the smaller one in new array -2 < 20
+    [20] [4, 8]  => [-6, -2]     left & right are not empty, compare and push the smaller one in new array 4 < 20
+    [20] [8]  => [-6, -2, 4]     left & right are not empty, compare and push the smaller one in new array 8 < 20
+    [20] []  => [-6, -2, 4, 8]   Right is empty, push left
+    [] []  => [-6, -2, 4, 8, 20] 
 */
 const mergeSort = (arr) => {
   if (arr.length < 2)
@@ -823,10 +820,10 @@ console.log(removeEvenRaw([4, 1, 9, 10, 15, 22, 5, 14]));
 /* Q.24 Valid Parentheses
 Input: s = "()[]{}"
 Output: true
- 
+
 Input: s = "(]"
 Output: false
- 
+
 
 *///==============================================================================================================================
 
@@ -935,11 +932,11 @@ console.log(mergePlz2);
 /* Q.29 Staircase
 Input: 6
 Output:
-     #
-    ##
-   ###
-  ####
- #####
+   #
+  ##
+ ###
+####
+#####
 ######
 
 *///==============================================================================================================================
@@ -966,7 +963,7 @@ for (let i = 1; i <= n; i++) {
 
 //==============================================================================================================================
 /* Q.30 Birthday Candles: You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.
- 
+
 Input: [3,2,1,3]
 Output: 2
 The maximum height candles are 4 units high. There are 2 of them, so return 2.
@@ -1029,9 +1026,9 @@ console.log(fibonacci(6))         //Time Complexity: O(2^n)
 -No disk may be placed on top of a smaller disk.
 *///==============================================================================================================================
 /*
-    Shift ‘N-1’ disks from ‘A’ to ‘B’, using C.
-    Shift last disk from ‘A’ to ‘C’.
-    Shift ‘N-1’ disks from ‘B’ to ‘C’, using A.
+  Shift ‘N-1’ disks from ‘A’ to ‘B’, using C.
+  Shift last disk from ‘A’ to ‘C’.
+  Shift ‘N-1’ disks from ‘B’ to ‘C’, using A.
 Time Complexity: O(2^n)
 */
 function towerOfHanoi(n, fromRod, usingRod, toRod) {        //A B C
@@ -1049,16 +1046,16 @@ towerOfHanoi(3, "A", "B", "C")
 //==============================================================================================================================/*
 /* Q.33 Hourglass - Given a 2D Array, Print the largest (maximum) hourglass sum found in
 Sample Input: 1 1 1 0 0 0
-              0 1 0 0 0 0
-              1 1 1 0 0 0
-              0 0 2 4 4 0
-              0 0 0 2 0 0
-              0 0 1 2 4 0
+            0 1 0 0 0 0
+            1 1 1 0 0 0
+            0 0 2 4 4 0
+            0 0 0 2 0 0
+            0 0 1 2 4 0
 
 Sample Output: 19 
-          e.g   2 4 4
-                  2
-                1 2 4
+        e.g   2 4 4
+                2
+              1 2 4
 *///==============================================================================================================================
 function hourglassSum(arr) {
   let maxsum = -9999, sum
