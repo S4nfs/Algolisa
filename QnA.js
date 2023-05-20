@@ -584,8 +584,8 @@ console.log(letsSearch(users, 'ajay'));
 Time Complexity: O(n^2)
 */
 function bubbleSort(array) {
-  for (let i = array.length; i > 0; i--) {
-    for (let j = 0; j < i - 1; j++) { //save memory by excluding the last one
+  for (let i = array.length - 1; i > 0; i--) {
+    for (let j = 0; j < i; j++) { //save memory by excluding the last one
       if (array[j] > array[j + 1]) {
         [array[j], array[j + 1]] = [array[j + 1], array[j]];
       }
@@ -616,7 +616,7 @@ Case 5: [0, 2, 10, 19, 34, 22] , [0, 2, 10, 19, 22, 34] - change
 
 
 function SelectionSort(array) {
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length - 1; i++) {
     let min = i;
     for (let j = i + 1; j < array.length; j++) {
       if (array[j] < array[min]) {
@@ -732,10 +732,9 @@ function merge(left, right) {
 
 console.log(mergeSort([-6, 20, 8, -2, 4]));   //Time Complexity: O(n log n)
 
-//==============================================================================================================================
+//============================================================================================================================
 /* Q.21 Find the maximum occurence characters in a string
-
-*///==============================================================================================================================
+*///==========================================================================================================================
 
 const maxCharacters = (str) => {
   const alpha = {};
