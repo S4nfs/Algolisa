@@ -48,15 +48,34 @@ var sum = function (n1, n2) {
 };
 console.log(sum("30", "20"));
 //✔️types in Functions🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞🍞
+// number type
 var addNumbers = function (n1, n2) {
     //ensure the return type should be number
     return n1 + n2;
 };
+// void type
 function printResult(num) {
     //void as it did not return anything
     console.log("Result in function is: ", num);
 }
-printResult(addNumbers(8, 8));
+/* unknown type
+Note:
+You can assign anything to unknown type but you have to do a type check or type assertion to operate on unknown
+You can assign anything to any type and you can perform any operation on any
+*/
+var iDontCare;
+var example;
+iDontCare = 5;
+iDontCare = "Max";
+if (typeof iDontCare === "string")
+    example = iDontCare; //without typechecking throw error
+/* never type
+void is used whenever a function does not return anything explicitly (usually that means it returns undefined implicitly) and never whenever a function never returns at all.
+*/
+var generateError = function (message, code) {
+    throw { message: message, errorCode: code };
+};
+generateError("An error occured!", 500);
 var iWantToUseThatFunction; //function types allow us to describe which type of functions specifically we want to use somewhere with expected value in parameters that matches
 iWantToUseThatFunction = addNumbers;
 console.log(iWantToUseThatFunction(8, 8));
@@ -68,9 +87,3 @@ function addHandle(n1, n2, cb) {
 addHandle(22, 22, function (result) {
     console.log(result);
 });
-var infiniteLoop = function () {
-    while (true) {
-        console.log("TO THE INFINITY & BEYOND");
-    }
-};
-infiniteLoop();
