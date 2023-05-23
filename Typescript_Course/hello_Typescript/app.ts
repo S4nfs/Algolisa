@@ -66,7 +66,7 @@ let addNumbers = (n1: number, n2: number): number => {
 };
 
 // void type
-function printResult(num: number): void {
+function nothing(num: number): void {
   //void as it did not return anything
   console.log("Result in function is: ", num);
 }
@@ -85,10 +85,10 @@ if (typeof iDontCare === "string") example = iDontCare; //without typechecking t
 /* never type
 void is used whenever a function does not return anything explicitly (usually that means it returns undefined implicitly) and never whenever a function never returns at all.
 */
-const generateError = (message: string, code: number): never => {
-  throw { message: message, errorCode: code };
-};
-generateError("An error occured!", 500);
+// const generateError = (message: string, code: number): never => {
+//   throw { message: message, errorCode: code };
+// };
+// generateError("An error occured!", 500);
 
 let iWantToUseThatFunction: (a: number, b: number) => number; //function types allow us to describe which type of functions specifically we want to use somewhere with expected value in parameters that matches
 iWantToUseThatFunction = addNumbers;
@@ -102,3 +102,24 @@ function addHandle(n1: number, n2: number, cb: (num: number) => void) {
 addHandle(22, 22, (result) => {
   console.log(result);
 });
+
+const aded = (a: number, b: number) => {
+  return a + b;
+};
+console.log(aded(5, 5));
+
+//Rest & Spread operator
+const addingNumbers = (...numbers: number[]) => {
+  return numbers.reduce((prev, curr) => {
+    return prev + curr;
+  }, 0);
+};
+console.log("Rest of numbers: ", addingNumbers(5, 10, 66, 87, 1.2));
+
+const obj2 = {
+  name: "Sagar",
+  height: 5.6,
+  weight: 65,
+};
+const spreadCopied = { ...obj2 };
+console.log("Spread: ", spreadCopied);
