@@ -3,6 +3,9 @@ class Department {
   private employees: string[] = []; //within the same class, not in private methods
   protected employeez: string[] = []; //can access in inheritance class
 
+  //✅ static methods and properties can be accessed without instantiating the class, like Math.pow()
+  static fiscalYear = 2023;
+
   constructor(private readonly id: number, n: string) {
     //u can also use shorthand initialization here, id + readonly property (can't change)
     this.name = n;
@@ -56,6 +59,10 @@ class QADepartment extends Department {
   set updateRecentReport(value: string) {
     this.addReport(value);
   }
+
+  static createFiscalYear(num: number) {
+    console.log(num);
+  }
 }
 const obj = new Department(1, "ABC");
 obj.describe();
@@ -72,3 +79,5 @@ newObj2.addEmployee("Goku");
 newObj2.addReport("A BCA graduate from BITS Pilani");
 newObj2.updateRecentReport = "An MCA post-graduate from Chitkara";
 console.log(newObj2.mostRecentReport);
+console.log(Department.fiscalYear);
+console.log(QADepartment.createFiscalYear(2024));
