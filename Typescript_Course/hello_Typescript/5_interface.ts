@@ -1,7 +1,7 @@
 /*✅  Interface - 
 In TypeScript, both abstract classes and interfaces can be used to define contracts for classes. However, there are some differences between them.
 
-An interface is a pure contract that defines only the structure of the class without any implementation details. It can define properties, methods, and their types, but it cannot contain any implementation code but only in inheritence class.
+An interface is a pure contract that defines only the structure of the class without any implementation details. It can define properties, methods, and their types, but it cannot contain any implementation code, methods implementations are left for classes and objects.
 
 Differences ? - 
     Classes can only inherit one abstract class but can inherit multiple interfaces.
@@ -12,7 +12,7 @@ Differences ? -
 */
 
 interface Greetable {
-  name: string; //no implementation
+  name: string; //no implementation, like a normal object
   greet(phrase: string): void;
 }
 
@@ -20,8 +20,8 @@ class Person implements Greetable {
   //can inherit multiple interfaces simply put after ,
   name: string;
 
+  //implementation
   constructor(n: string) {
-    //implementation
     this.name = n;
   }
   greet(phrase: string) {
