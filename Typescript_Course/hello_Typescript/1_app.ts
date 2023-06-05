@@ -90,6 +90,28 @@ void is used whenever a function does not return anything explicitly (usually th
 // };
 // generateError("An error occured!", 500);
 
+// custom type
+type Programmer = {
+  name: string;
+  knownFor: string[];
+};
+
+type Coder = {
+  name: string;
+  dob: Date;
+};
+
+type combineCustomType = Programmer & Coder;
+
+const resume: combineCustomType = {
+  // must provide values for all of the required properties, otherwise it will give compile err
+  name: "Sagar",
+  dob: new Date(),
+  knownFor: ["coding"],
+};
+console.log(resume);
+
+//types in functions
 let iWantToUseThatFunction: (a: number, b: number) => number; //function types allow us to describe which type of functions specifically we want to use somewhere with expected value in parameters that matches
 iWantToUseThatFunction = addNumbers;
 console.log(iWantToUseThatFunction(8, 8));
