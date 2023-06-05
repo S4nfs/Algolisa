@@ -16,10 +16,24 @@ interface Greetable {
   greet(phrase: string): void;
 }
 
-class Person implements Greetable {
+interface Age {
+  age: number;
+  nah?: string; //optional property
+}
+
+// interface Greetable extends Age {
+//   //can inherit multiple interfaces simply extend
+//   name: string;
+//   greet(phrase: string): void;
+// }
+
+interface AnonymousMyFunc {
+  (a: number, b: number): number;
+}
+class Person implements Greetable, Age {
   //can inherit multiple interfaces simply put after ,
   name: string;
-
+  age = 30;
   //implementation
   constructor(n: string) {
     this.name = n;
