@@ -90,28 +90,62 @@ void is used whenever a function does not return anything explicitly (usually th
 // };
 // generateError("An error occured!", 500);
 
-// custom type
-type Programmer = {
+/*- custom type (including Descrimination type) */
+type Bird = {
   name: string;
-  knownFor: string[];
+  food: string[];
+  speed: number;
+  kind: "B"; //descriminate union to check in switch case later
 };
 
-type Coder = {
+type Dog = {
   name: string;
   dob: Date;
+  speed: number;
+  kind: "D";
 };
 
-type combineCustomType = Programmer & Coder;
+type combineCustomTypeAnimal = Bird & Dog;
 
-const resume: combineCustomType = {
+const animal: combineCustomTypeAnimal = {
   // must provide values for all of the required properties, otherwise it will give compile err
-  name: "Sagar",
+  name: "Shiba",
   dob: new Date(),
-  knownFor: ["coding"],
+  food: ["Kellogg's", "bitcoin", "Redmeat"],
+  speed: 20,
 };
-console.log(resume);
+console.log(animal);
 
-//types in functions
+type unionCustomTypeAnimal = Bird | Dog; //it takes the common in both the type, e.g name
+// function whoAmI(animal: customUnionType) {
+//   if ("dob" in animal)
+//     //need to explicitly check "dob" to avoid compile error, works with interface also
+//     console.log("Hi, ", animal.name, "DOB: ", animal.dob);
+// }
+
+//------------OR-------------
+function whoAmI(animal: unionCustomTypeAnimal) {
+  let result;
+  switch (animal.kind) {
+    case "B":
+      result = animal.speed;
+      break;
+
+    case "D":
+      result = animal.speed;
+      break;
+  }
+  console.log("Top Speed", result);
+}
+
+whoAmI({
+  kind: "B",
+  speed: 110,
+  name: "Dove",
+  food: [],
+});
+
+/* types in functions */
 let iWantToUseThatFunction: (a: number, b: number) => number; //function types allow us to describe which type of functions specifically we want to use somewhere with expected value in parameters that matches
 iWantToUseThatFunction = addNumbers;
 console.log(iWantToUseThatFunction(8, 8));
