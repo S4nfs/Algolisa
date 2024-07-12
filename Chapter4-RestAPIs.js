@@ -68,13 +68,13 @@ async function getTotalGoals(team, year) {
   for (let page = 1; ; page++) {
     const { goals, totalPages } = await getGoalsFromPage('team1', page)
     totalGoals += goals
-    if (page === totalGoals) break
+    if (page === totalPages) break
   }
 
   for (let page = 1; ; page++) {
     const { goals, totalPages } = await getGoalsFromPage('team2', page)
     totalGoals += goals
-    if (page === totalGoals) break
+    if (page === totalPages) break
   }
   return totalGoals
 }
