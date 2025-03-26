@@ -1,7 +1,7 @@
 
 
 
-                                                                                   
+#        ____                                                                           
 #     //   ) )  //                   //__//             /                              
 #    //___/ /  //  ___      ___     / ___      ___     / __      ___     ( )   __    
 #   / __  (   // //   ) ) //   ) ) //\ \     //   ) ) //   ) ) //   ) ) / / //   ) ) 
@@ -48,12 +48,15 @@ def print_blockchain_elements():
     for block in blockchain:
         print('Outputting Block')
         print(block)
-
+    else:
+        print('-' * 40)
+        
 def verify_chain():
-    block_index = 0
     is_valid = True
-    for block in blockchain:
-        if block[0] == block[blockchain[block_index - 1]]:
+    for block_index in range(len(blockchain)):
+        if block_index == 0:
+            continue
+        elif blockchain[block_index][0] == blockchain[block_index - 1]:
             is_valid = True
         else:
             is_valid  = False
@@ -62,9 +65,9 @@ def verify_chain():
 
 # add_transaction(get_transaction_value())
 
+waiting_for_input = True
 
-while True:
-    # Outputting blockchain list to the console
+while waiting_for_input:
         print("Please Choose")
         print('1: Add a new transaction value')
         print('2: output the blockchain blocks')
@@ -81,14 +84,11 @@ while True:
             if len(blockchain) >= 1:
                 blockchain[0] = 2
         elif user_choice == 'q':
-            break
+            waiting_for_input = False
         else:
             print("Invalid Input")
-
         if not verify_chain():
             print('Invalid Blockchain!')
             break
-        
-        print('Submitted')
-
-print("DONE!")
+else:
+    print('User Left.. Bye!👋')
