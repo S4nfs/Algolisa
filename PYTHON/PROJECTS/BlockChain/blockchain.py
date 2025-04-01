@@ -7,9 +7,14 @@
 #   / __  (   // //   ) ) //   ) ) //\ \     //   ) ) //   ) ) //   ) ) / / //   ) ) 
 #  //    ) ) // //   / / //       //  \ \   //       //   / / //   / / / / //   / /  
 # //____/ / // ((___/ / ((____   //    \ \ ((____   //   / / ((___( ( / / //   / /   
-
+#
+#   A simple project on how blockchain works
+#   Blockchain is a decentralized digital ledger that securely records transactions across a network of computers. 
+#   It ensures data integrity by linking blocks of information in a chronological chain, making the data resistant to tampering.
+#   Blockchain is the foundational technology that enables the existence of cryptocurrencies
 blockchain = []
-
+open_transactions = []
+owner = 'Sagar'
 
 def get_last_blockchain_value():
     """ Returns the last value of the current bockchain """
@@ -17,23 +22,28 @@ def get_last_blockchain_value():
         return None
     return blockchain[-1]
 
-def add_transaction(transaction_amt, last_transaction = [1]):
+def add_transaction( recipient, sender=owner, amount = 1.0):
     """ Append new value and last blockchain value to the block
     
     Arguments:
-        :transaction_amt: the amount that shoul be added
-        :last_transaction: the last blockchain transaction (default [1])
+        :sender: the sender of the coins
+        :recipient: the receiver of the coins
+        :amount: transaction amount
     """
-    if last_transaction == None:
-        last_transaction = [1]
+    
+    transaction = {'sender': sender, 'recipient': recipient, 'amount': amount} #dictionary to store the transaction details
+    open_transactions.append(transaction)
 
-    blockchain.append([last_transaction, transaction_amt])
+def mine_block():
+    pass
 
 def get_transaction_value():
     """
     Returns the input of the users (a new transaction amount) as a float
     """
-    return float(input('Your transaction amount:'))
+    tx_recipient = input('Enter the recipient name: ')
+    tx_amount = float(input('Your transaction amount: '))
+    return (tx_recipient, tx_amount) # a tuple with parenthesis
 
 
 def get_user_choice():
@@ -76,8 +86,10 @@ while waiting_for_input:
         user_choice = get_user_choice()
 
         if user_choice == '1':
-            tx_amount = get_transaction_value()
-            add_transaction(tx_amount, get_last_blockchain_value())
+            tx_data = get_transaction_value()
+            recipient, amount = tx_data
+            add_transaction(recipient, amount=amount)
+            print(open_transactions)
         elif user_choice == '2':
             print_blockchain_elements()
         elif user_choice == 'h':

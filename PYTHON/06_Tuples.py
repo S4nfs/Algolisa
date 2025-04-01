@@ -1,4 +1,4 @@
-# 🍏 A touple is an immmutable datatype in python
+# 🍏 A touple is an immmutable datatype in python (Characteristics: Immutatable, ordered, allow duplicates, mixed type)
 # Creating a tuple using (). The difrenece b/w tuple and list is that you can't change the value (immutable) in tuple
 
 t = (1, 25, 4, 8, 9, 4, 12)

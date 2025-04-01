@@ -1,4 +1,4 @@
-# 🍏  A Dictionary is a collection of key-value pairs. (Mutable)--------------------------------------------------------------------
+# 🍏  A Dictionary (sort of a brother of JSON) is a collection of key-value pairs. (Characteristics: Mutatable, unordered, no duplicates, mixed type)
 
 from re import A
 

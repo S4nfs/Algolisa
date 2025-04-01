@@ -1,5 +1,4 @@
-# 🍏 List & their Methods()
-
+# 🍏 List - (Characteristics: Mutatable a.k.a \editable\, ordered, allow duplicates, mostly of one type)
 a = [1, 6, 56, 3, 8]
 print(a[2])
 # ----------------------------------------------
