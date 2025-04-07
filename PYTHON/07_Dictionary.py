@@ -57,3 +57,10 @@ favLang["vivek"] = b
 favLang["jatin"] = c
 favLang["prateek"] = d
 print(favLang)
+
+
+#🍏 Dict comprehensions in Python are like list comprehensions — but instead of building a list, you’re building a dictionary
+
+ages = {'alice': 25, 'bob': 17, 'carol': 30}
+DictAdults = {k: v for (k, v) in ages.items() if v >= 18}
+print('DictAdults: ', DictAdults) # Output: {'alice': 25, 'carol': 30}

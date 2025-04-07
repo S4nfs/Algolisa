@@ -24,3 +24,23 @@ print(a)
 # Remove(Element)-------------------------------
 a.remove(45)
 print(a)
+
+# 🍏 List comprehensions in Python are a super clean and efficient way to create lists in one liner - improves readability
+
+squares = []
+for i in range(5):
+    squares.append(i * i)
+
+squaresWithMoreReadability = [i * i for i in range(5)]
+print('squaresWithMoreReadability: ', squaresWithMoreReadability)
+
+# Flatten a 2D list:
+
+matrix = [[1, 2], [3, 4]]
+flat = [num for row in matrix for num in row]
+print('flat: ', flat)
+
+# Convert list of strings to uppercase:
+words = ["hello", "world"]
+uppercased = [word.upper() for word in words]
+print('uppercased: ', uppercased)
