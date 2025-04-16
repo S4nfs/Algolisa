@@ -1,3 +1,5 @@
+# A Note: Before we start, I want to mention that Python is very easy to learn. If you're already comfortable with any programming language, you can pick it up within a week. It has dynamic typing like PHP and shares similarities with Go.
+
 from winsound import PlaySound
 
 print("Hello World")

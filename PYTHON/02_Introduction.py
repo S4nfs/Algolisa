@@ -3,7 +3,7 @@
 # Identifiers = class/function/variable name
 
 #Python is dynamically typed (like PHP, JS), not statically typed.
-#🔹 Dynamic Typing: You don’t need to declare variable types explicitly. The type is determined at runtime.
+#🔹 Dynamic Typing: (like PHP) You don’t need to declare variable types explicitly. The type is determined at runtime.
 #🔹 Static Typing (like in Java, C, TypeScript): Variable types are declared and checked at compile time.
 
 a = "Sagar" # a is string
@@ -11,6 +11,8 @@ _b = 30     # numbers can be written as 3_000_000 (3 mill)
 c_1 = 45.25
 D = True
 e = None
+
+#Strings, Numbers and Booleans are passed by values
 print(type(a)) #<class 'str'>
 print(type(_b)) #<class 'int'>
 print(type(c_1)) #<class 'float'>
