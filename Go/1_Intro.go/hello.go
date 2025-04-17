@@ -1,8 +1,12 @@
-package main	//package
+/** Go is a fast, statically typed, compiled language known for its simplicity and efficiency. Developed at Google by Robert Griesemer, Rob Pike, and Ken Thompson in 2007. Go's syntax is similar to C++
+ */
 
-import "fmt"	//module
+// 🐼 Lets follow the tradition and write the hello world program
 
-func main(){	//entry point function (should always be main())
+package main //package
+import "fmt" //module
+
+func main() { //entry point function (should always be main())
 	fmt.Print("Hello World")
 }
 
