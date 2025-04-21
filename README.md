@@ -32,6 +32,12 @@ Welcome to the ultimate guide to programming languages! This GitHub repository c
 
 This repository shares all of the resources referenced with other available projects and some of the enterprise level projects of mine handling thousands of users everyday. I often revisit this repository whenever I forget something. That's why I keep updating it whenever I find something missing that needs to be added <span style="color:orange;">Note: Avoid filenames like demo* or debug* as they are for debugging purposes.</span>
 
+## Which one have you chosen?
+
+Choosing a programming language isn't just about speed — factors like industry demand, ecosystem, community and memory management (e.g. garbage collection) matters more. The key is to start & build; you can always switch later if needed.
+
+![Which one have you chosen?](I_AM_SPEED.png)
+
 ## Academic Honesty 🎓
 
 **DO NOT COPY FOR AN ASSIGNMENT** - Avoid plagiarism and adhere to the spirit of this [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/).
