@@ -1,6 +1,6 @@
-
-
-
+#
+#
+#
 #        ____                                                                           
 #     //   ) )  //                   //__//             /                              
 #    //___/ /  //  ___      ___     / ___      ___     / __      ___     ( )   __    
@@ -76,11 +76,11 @@ def mine_block():
         'recipient': owner,
         'amount': MINING_REWARD
     } 
-    copied_transaction
-    open_transactions.append(reward_transaction)
+    copied_transaction = open_transactions[:]
+    copied_transaction.append(reward_transaction)
     print(hashed_block)
 
-    block = {'previous_hash': hashed_block, 'index': len(blockchain), 'transactions': open_transactions}
+    block = {'previous_hash': hashed_block, 'index': len(blockchain), 'transactions': copied_transaction}
     blockchain.append(block)
     return True
 
@@ -116,7 +116,8 @@ def verify_chain():
             return False
     return True
 
-# add_transaction(get_transaction_value())
+def verify_transactions():
+    return all([verify_transactions(tx) for tx in open_transactions ])
 
 waiting_for_input = True
 
@@ -124,8 +125,9 @@ while waiting_for_input:
         print("Please Choose")
         print('1: Add a new transaction value')
         print('2: Mine a new block')
-        print('3: output the blockchain blocks')
-        print('3: output participants')
+        print('3: Output the blockchain blocks')
+        print('4: Output participants')
+        print('5: Check transaction validity')
         print('h: Manipulate the chain')
         print('q: Quit')
         user_choice = get_user_choice()
@@ -146,6 +148,11 @@ while waiting_for_input:
             print_blockchain_elements()
         elif user_choice == '4':
             print (participants)
+        elif user_choice == '5':
+            if verify_transactions():
+                print ("All transactions are valid")
+            else:
+                print("Invalid Transaction are there")
         elif user_choice == 'h':
             if len(blockchain) >= 1:
                 blockchain[0] = 2

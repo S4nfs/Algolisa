@@ -1,4 +1,7 @@
-# A Note: Before we start, I want to mention that Python is very easy to learn. If you're already comfortable with any programming language, you can pick it up within a week. It has dynamic typing like PHP and shares similarities with Go.
+# Dev Note: Before we start, I (S4nfs) want to mention that Python is a very easy language. If you're already comfortable with any programming language, you can pick it up within a week or two. It has dynamic typing like PHP and shares similarities with Go.
+
+# Learn more about the Pythons' best practise here: https://peps.python.org/pep-0008/
+
 
 from winsound import PlaySound
 
@@ -27,5 +30,5 @@ print(os.listdir())
 # playsound("C:\\xampp\\htdocs\\MyCourses\\PYTHON_course\\1.mp3")
 
 
-#🐍 Learn more about the Pythons' best practise here: https://peps.python.org/pep-0008/
+
 

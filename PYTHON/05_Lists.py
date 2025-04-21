@@ -3,30 +3,59 @@ a = [1, 6, 56, 3, 8]
 # OR 
 # you can use list() constructor to create a list
 # a = list((1,6,56,3,8))
-print(a[2])
+print(a[2])  # 56
 # ----------------------------------------------
 a[2] = 100
-print(a)
+print(a)  # [1, 6, 100, 3, 8]
 
 # Sort------------------------------------------
 a.sort()
-print(a)
+print("Sorted :", a)  # [1, 3, 6, 8, 100]
 
-# Append(add to end)---------------------------
-a.append(45)
-print(a)
+# Append (add to end, one elemnt at a time)-------
+a.append(45) 
+# a.append([88,99]) # [1, 3, 6, 8, 100, [88,99]]
+print("Append : ",a)  # [1, 3, 6, 8, 100, 45]
 
-# Insert---------------------------------------
+# Insert----------------------------------------
 a.insert(2, 101)
-print(a)
+print("Inserted :",a)  # [1, 3, 101, 6, 8, 100, 45]
 
-# POP(Delete Index)-----------------------------
+# POP (Delete Index)----------------------------
 a.pop(2)
-print(a)
+print("Popped :",a)  # [1, 3, 6, 8, 100, 45]
 
-# Remove(Element)-------------------------------
+# Remove (Element)------------------------------
 a.remove(45)
-print(a)
+print("Removed :",a)  # [1, 3, 6, 8, 100]
+
+# Extend (Add multiple elements)----------------
+a.extend([7, 9])
+print("Extended :",a)  # [1, 3, 6, 8, 100, 7, 9]
+
+# Index (Find index of element)-----------------
+print(a.index(8))  # 3
+
+# Count (Occurrences of element)---------------
+print(a.count(3))  # 1
+
+# Reverse (In-place reverse)--------------------
+a.reverse()
+print(a)  # [9, 7, 100, 8, 6, 3, 1]
+
+# Copy (Shallow copy of list)-------------------
+b = a.copy()
+print(b)  # [9, 7, 100, 8, 6, 3, 1]
+
+# Del (Deletes element, works with only lists & dictionaries but not with tuples & sets as they are immutable )-------------------
+del(a[0])
+print("Del :",a)  # [ 7, 100, 8, 6, 3, 1]
+
+
+# Clear (Remove all elements)-------------------
+a.clear()
+
+print(a)  # []
 
 # 🍏 List comprehensions in Python are a super clean and efficient way to create lists in one liner - improves readability
 
@@ -49,7 +78,7 @@ uppercased = [el.upper() if el != "world" else '-'.join(el.upper()) for el in wo
 print('uppercased: ', uppercased) #['HELLO', 'W-O-R-L-D']
 
 
-# 🍏 Duplicating list -  As list values are passed by references we can't directly change value so lets duplicate it first using colon ":"
+# 🍏 Duplicating list (shallow copy) -  As list values are passed by references we can't directly change value so lets duplicate  it first using colon ":"
 
 first_list = [1,2,3,4]
 second_list = first_list[:]
