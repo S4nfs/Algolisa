@@ -1,0 +1,119 @@
+First go with the Hello-react project in the folder where you'll get familiar with the below topics then moved to advanced features like handling the redux state and graphQL.
+
+npm - It install packages globally on your system
+npx - It directly excutes a package without installing it
+
+Create a new project (at path ./) : npx create-react-app ./
+
+Document - html
+Object - h1, p, input, a, tags
+Model - html structure
+
+🟡 Virtal Dom - The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+
+🟡 Component - React components let you break up the user interface into seperate pieces that can be reused and handled independently.
+
+Functional Component -
+
+- functional components are basic javascript fuctions such as arrow functions, and anonymous functions.
+- there is no render method used in functional components.
+- these are mainly responsible for UI and are typically presentational only (for ex. a button component).
+- functional components can accept and use props.
+- functional components should be favoured if you do not neet to make use of React State.
+
+Class Component -
+
+- class components make use of ES6 class and extend the component class in React.
+- Sometimes called "smart" and "stateful" components as they tend to implement logic anmd state.
+- react lifecycle methods can be used inside class component (for ex. componentDidMount, componentDidUpdate, componentWillUnmount).
+- you pass props down to class component and access that with this.props.
+
+https://medium.com/coffee-and-codes/componentdidmount-v-s-componnetwillmount-react-47f4f631276c
+
+🟡 Props - Props stand for "Properties." They are read-only components. Props are arguments passed into React components
+
+                    Props                               ||                             State
+        Props get passed to the component               ||            State is managed into the component
+        Props are immutable                             ||            State is mutable and can be changed
+        props -> functional component                   ||            UseStateHook -> functional component
+        this.props -> class component                   ||            this.state -> class component
+
+yes you can use UseState in functional component also.
+
+🟡 Hooks - Hooks allows you to use state and other React features without writing a class. Some built-in hooks are useState, useEffect.
+
+- useEffect hook is a smooth combination of React’s lifecycle methods like componentDidMount, componentDidUpdate and componentWillUnmount.
+- sometimes, we want to run some code after the DOM has been updated. It can be anything, showing pop-ups, sending API requests, logging users’ information etc. and such functions don’t require cleanup to be performed. They are just hit-once functions and then we forget about them. Such places are the best examples to use the useEffect hook.
+
+🟡 ContextAPI - contextAPI is an easy way to create global variables that can be passed around in the react app and this is an alternative of prop drilling.
+
+🟡 Redux - it creates a global state for the whole application, that can be accessed by any of your component
+Store - that holds the state of your application
+Action - that describe what happened in the application
+Reducer - which handles the action and describe how to update the state
+
+🟡 useCallback and useMemo Hooks
+When to use the two hooks - useCallback and useMemo?
+Every state change in React can cause re-rendering which can affect badly on application. Mostly when the component size gets increased. useCallback and useMemo hooks are used for improvising the performance of React application.
+Does useCallback and useMemo do the same thing?
+
+Though both are used for performance optimization, it might be confusing for developers regarding their use-case. So let’s understand them thoroughly.
+
+Before diving deeply into their difference, let’s understand why they are used.
+
+    As mentioned above, both hooks are used for performance optimization.
+    If our application is doing frequent re-rendering then based on the use-case we can use one of them.
+
+Let’s see how syntactically different they are:-
+
+useCallback(()=>{
+doSomething();
+}, [dependencies]);
+
+useMemo(()=>{
+doSomething();
+}, [dependencies]);
+
+As we can see, there is no such difference in their syntax except in their naming. Both hooks accept a function and a dependency array. The main difference between useMemo and useCallback hook is, useMemo returns memoized value and useCallback returns memoised function.
+
+-------------------------------------------------DOM-------------------------------------------------
+
+🟡 useRef Hook - useRef(initialValue) is a built-in React hook that accepts one argument as the initial value.There are 2 rules to remember about references:
+    -The value of the reference is persisted (remains unchanged) between component re-renderings;
+    -Updating a reference doesn't trigger a component re-rendering.
+
+Another use the useRef() hook is to access DOM elements directly. 
+
+🟡 useImperativeHandle Hook - useImperativeHandle(ref, createHandle, dependencies?) Exposing a custom ref handle to the parent component
+
+By default, components don’t expose their DOM nodes to parent components, you have to opt in with forwardRef.
+
+
+🟡 useLayoutEffect Hook - same as useEffect()
+The useEffect and useLayoutEffect hooks differ in the order in which they are invoked. After the DOM has been painted, the useEffect theme is called. On the other hand, the useLayoutEffect article is called synchronously before making any changes to the screen and can sometimes provide animations that seem butterier, cleaner, and faster than useEffect.
+
+🟡 useTransition Hook- const [isPending, startTransition] = useTransitionHook()
+The useTransition hook enables us to mark some state modifications as unimportant. These state updates will be performed in parallel with other state updates, but the rendering of the component will not be delayed.
+
+🟡 useDeferredValue Hook- The useDeferredValue hook lets us to solve the slow render issue by adding a delay before some information is calculated.
+
+🟡 useDisclosure Hook - Helps you easily manage the open/closed state of components such as modals, dropdowns, toggle buttons, etc. in React. It is mainly used in UI libraries such as Chakra UI. Always use these three keys and cannot be renamed:
+isOpen : Current open state (true or false).
+onOpen : Function to open a modal.
+onClose : Function to close the modal.
+
+
+-------------------------------------------------React 19-------------------------------------------------
+
+What’s New in React 19?
+1. Stable Server Actions
+2. Document Metadata Hoisting
+3. New Hooks like useFormStatus(), useFormState(), useOptimistic(); 
+4. ref as a prop
+5. Added initialValue option in useDeferredValue allowing you to set a default value for the initial render
+
+
+🟡 What is Hydration in SSR?
+Hydration in Server-Side Rendering (SSR) (introduced in React 18 ) is the process of making server-rendered static HTML interactive by attaching event handlers and enabling dynamic behavior on the client side. It bridges the gap between the efficiency of SSR and the interactivity of client-side applications. It can be metaphorically described as 'watering' the initially 'dry' HTML - sent from the server - with the 'water' of interactivity and dynamic behavior.
+
+🟡 useOptimistic Hook - The useOptimistic hook allows you to make optimistic updates to your UI. This means you can update the user interface immediately, assuming a successful result of an asynchronous operation, and then revert it if the operation fails. This approach improves the user experience by making the UI feel more responsive.

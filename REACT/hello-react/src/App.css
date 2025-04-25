@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+.antiJSX {
+  font-family: "Orbitron", sans-serif;
+}
+.antiJSXpara {
+  color: red;
+  font-size: small;
+  font-family: "Orbitron", sans-serif;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.add-to-cart img {
+  width: 50px;
+  position: relative;
+  top: 1%;
+  right: 1%;
+  margin: 0px;
+}
+.add-to-cart span {
+  position: relative;
+  margin: 0 5px 18px;
+  bottom: 30px;
+  left: 65px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  width: 30px;
+  display: inline-block;
+  padding: 0px;
+  z-index: 1;
+}
+.item {
+  float: left;
+  padding: 20px;
+  width: 120px;
+}
+.img-wrapper img {
+  width: 100px;
+  margin-top: 8px;
+}
+.cart-wrapper {
+  height: 120px;
+  width: 500px;
+  border: 1px solid #ccc;
+}
+.btn-wrapper button {
+  background-color: slateblue;
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+}
