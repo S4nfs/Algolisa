@@ -1,1 +1,1 @@
-Projects are In-Progress
+Project is In-Progress
