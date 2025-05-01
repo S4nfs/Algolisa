@@ -13,7 +13,21 @@
 #   It ensures data integrity by linking blocks of information in a chronological chain, making the data resistant to tampering.
 #   Blockchain is the foundational technology that enables the existence of cryptocurrencies
 
-import functools
+
+# Features:
+# Chain of Data
+# Mine blocks
+# Block Hashing
+# Analyze verify chain
+# Transaction
+# Store chain to disk
+# Node Network
+# Share Data, Resolve conflicts
+# Wallets
+
+from functools import reduce
+import hashlib as hl
+import json
 
 MINING_REWARD = 10
 genesis_block = {'previous_hash': '', 'index':0, 'transactions': []} #the very first block
@@ -22,17 +36,33 @@ open_transactions = [] #using Lists to hold each transactions details
 owner = 'Sagar'
 participants = {'Sagar'}
 
+
+
 def hash_block(block):
-    return '-'.join([str(block[key]) for key in block])#list comprehension output look like this: -0-[]-1-[{'sender': 'Sagar', 'recipient': 'Alex', 'amount': 56.0}]  
+    return  hl.sha256(json.dumps(block).encode()).hexdigest()#list comprehension output look like this: -0-[]-1-[{'sender': 'Sagar', 'recipient': 'Alex', 'amount': 56.0}] 
+
+def valid_proof(transactions, last_hash, proof):
+    guess = (str(transactions) + str(last_hash) + str(proof)).encode()
+    guess_hash = hl.sha256(guess).hexdigest
+    print(guess_hash)
+    return guess_hash[0:2] == '00'
+
+def proof_of_work():
+    last_block=blockchain[-1]
+    last_hash = hash_block(last_block) 
+    proof = 0
+    while valid_proof(open_transactions, last_hash, proof):
+        proof +=1
+    return proof
 
 def get_balance(participant):
     tx_sender = [[tx['amount'] for tx in block['transactions'] if tx['sender']== participant] for block in blockchain]
     open_tx_sender = [tx['amount'] for tx in open_transactions if tx['sender'] == participant]
     tx_sender.append(open_tx_sender)
-    amount_sent = functools.reduce(lambda tx_sum, tx_amt: tx_sum + tx_amt[0] if len(tx_amt) > 0 else 0, tx_sender, 0 )
+    amount_sent = reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt) if len(tx_amt) > 0 else tx_sum + 0, tx_sender, 0 )
 
     tx_recipient = [[tx['amount'] for tx in block['transactions'] if tx['recipient']== participant] for block in blockchain]
-    amount_received = functools.reduce(lambda tx_sum, tx_amt: tx_sum + tx_amt[0] if len(tx_amt) > 0 else 0, tx_recipient, 0 )
+    amount_received = reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt) if len(tx_amt) > 0 else tx_sum + 0, tx_recipient, 0 )
 
     return amount_received - amount_sent
 
@@ -67,6 +97,7 @@ def add_transaction( recipient, sender=owner, amount = 1.0):
 def mine_block():
     last_block = blockchain[-1]
     hashed_block = hash_block(last_block) 
+    print(hashed_block)
     reward_transaction = {
         'sender': 'MINING',
         'recipient': owner,
