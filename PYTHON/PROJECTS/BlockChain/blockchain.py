@@ -29,6 +29,7 @@ from functools import reduce
 
 from collections import OrderedDict #OrderedDict is a class from collections that preserves the order of keys as they were added
 from  hash_util import hash_block, hash_string_256
+import json
 
 MINING_REWARD = 10
 genesis_block = {'previous_hash': '', 'index':0, 'transactions': [], 'proof':100} #the very first block
@@ -38,19 +39,22 @@ owner = 'Sagar'
 participants = {'Sagar'}
 
 def load_data():
-        with open('secure_blockchain.txt', 'r') as f:
+    try:
+        with open('./secure_blockchain.txt', 'r') as f:
             file_content = f.readlines()
             global blockchain, open_transactions
-            blockchain = file_content[0]
-            open_transactions = file_content[1]
+            blockchain = json.loads(file_content[0][:-1])
+            open_transactions = json.loads(file_content[1])
+    except (IOError, IndexError):
+        print('File not found! Starting with genesis block...')
 
 load_data()
 
 def save_data():
-    with open('secure_blockchain.txt', 'w') as f:
-        f.write(str(blockchain))
+    with open('./secure_blockchain.txt', 'w') as f:
+        f.write(json.dumps(blockchain))
         f.write('\n')
-        f.write(str(open_transactions))
+        f.write(json.dumps(open_transactions))
 
 def valid_proof(transactions, last_hash, proof):
     guess = (str(transactions) + str(last_hash) + str(proof)).encode()
@@ -126,7 +130,6 @@ def mine_block():
 
     block = {'previous_hash': hashed_block, 'index': len(blockchain), 'transactions': copied_transaction, 'proof': proof}
     blockchain.append(block)
-    save_data()
     return True
 
 def get_transaction_value():
