@@ -1,4 +1,5 @@
-# 🍏 List - (Characteristics: Mutatable a.k.a \editable\, ordered, allow duplicates, mostly of one type)
+# 🍏 List - (Characteristics: Mutatable a.k.a \editable\, ordered, allow duplicates, mostly of one type). Python does not have built-in support for Arrays, use list only
+
 a = [1, 6, 56, 3, 8]
 # OR 
 # you can use list() constructor to create a list
@@ -8,6 +9,19 @@ print(a[2])  # 56
 a[2] = 100
 print(a)  # [1, 6, 100, 3, 8]
 
+# 🍏 List Methods
+"""
+sort()      - It sorts the list in-place in ascending order by default
+append()    - It adds a single element to the end of the list
+insert()    - It inserts an element at the specified index
+pop()       - It removes and returns the element at the given index (default is last)
+remove()    - It removes the first occurrence of a specified element from the list
+extend()    - It adds multiple elements from another iterable to the end of the list
+index()     - It returns the index of the first occurrence of the specified element
+count()     - It returns the number of times a specified element appears in the list
+reverse()   - It reverses the elements of the list in place
+copy()      - It returns a shallow copy of the list
+"""
 # Sort------------------------------------------
 a.sort()
 print("Sorted :", a)  # [1, 3, 6, 8, 100]
