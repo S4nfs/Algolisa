@@ -1,4 +1,4 @@
-# 🧠 Knowledge-Based Agents & Logical Inference in AI
+# 🧠 Knowledge-Based Agents & Logical Inference in AI (Columbia Lectures)
 
 This project explains how AI systems can use **formal logic** to represent knowledge and perform **reasoning**. The main focus is on **propositional logic**, **model checking**, and **inference** to create **knowledge-based agents**. Logic-based AI uses formal logic and symbolic rules to draw conclusions, while LLMs use statistical associations in natural language learned from data.
 
