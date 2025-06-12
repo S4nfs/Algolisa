@@ -32,5 +32,14 @@ func main() {
 
 	var futureValue float64 = investmentAmount * math.Pow((1+expectedReturn/100), float64(years))
 	futureRealValue := futureValue / math.Pow(1+inflationRate/100, float64(years)) // := inferred type
-	fmt.Println("Future Value; ", futureValue, "Future Real Value (adjusted for Inflation): ", futureRealValue)
+	fmt.Println("Future Value; ", futureValue, "\nFuture Real Value (adjusted for Inflation): ", futureRealValue)
+
+	/*	Formatting rules:
+		%v is used to print the value of the arguments
+		%T is used to print the type of the arguments
+		%f	Decimal point, no exponent
+		%.2f	Default width, precision 2
+	*/
+
+	// fmt.Printf("Future Value; %v \nFuture Real Value (adjusted for Inflation): %.1f", futureValue, futureRealValue) //can also be written in formtted way
 }
