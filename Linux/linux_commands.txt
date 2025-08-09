@@ -122,11 +122,10 @@ start a container			                  #docker start meracontainername
 delete a container			                #docker stop Container_ID
 kill all running containers		          #docker kill $(docker ps -q)
 start all stopped containers		        #docker start $(docker ps -a -q)
-delete all stopped containers		        #docker rm $(docker ps -a -q)
+delete all stopped containers		        #docker rm $(docker ps -a -q) 
 delete all images			                  #docker rmi $(docker images -q)
 kill a container 			                  #docker rm Container_ID
 delete an image				                  #docker rmi -f Image_name
-use container's shell			              #docker exec -it mycontainer bash
 build image 				                    #docker build -t jenops .
 tag image				                        #docker image tag jenops s4nfs/jenops:latest
 publish to dockerhub			              #docker image push s4nfs/jenops:latest
@@ -137,12 +136,15 @@ Display detailed information
 on one or more volumes			            #docker volume inspect
 Remove all unused local volumes		      #docker volume prune 	
 Remove one or more volumes		          #docker volume rm
+See logs continous                      #docker logs -f <container_name_or_id>
+See logs last 100 license               #docker logs --tail 100 <container_name_or_id>
+Enter the container interactively       docker exec -it <container_name_or_id> /bin/bash
 
 If you want to clean up and 
 delete all unused container images	    #docker image prune -a
 Reset docker completely					        #docker system prune -a --volumes
-
-
+Proper down and build container         #docker-compose down -v && docker-compose -f docker-compose.yml up -d --build
+No Downtime                             #docker-compose build && docker-compose up -d
 
 **********************************************************************************************************************************
    _____ _ _   _           _     
