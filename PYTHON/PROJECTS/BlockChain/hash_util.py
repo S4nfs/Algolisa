@@ -11,4 +11,5 @@ def hash_block(block):
     Arguments:
         :block: The block should be hashed
     """
-    return hl.sha256(json.dumps(block, sort_keys=True).encode()).hexdigest() #list comprehension output look like this: -0-[]-1-[{'sender': 'Sagar', 'recipient': 'Alex', 'amount': 56.0}] also sorting the dictionaries using sort_keys
+    hashble_block = block.__dict__.copy()
+    return hl.sha256(json.dumps(hashble_block, sort_keys=True).encode()).hexdigest() #list comprehension output look like this: -0-[]-1-[{'sender': 'Sagar', 'recipient': 'Alex', 'amount': 56.0}] also sorting the dictionaries using sort_keys
