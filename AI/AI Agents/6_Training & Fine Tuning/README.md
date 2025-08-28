@@ -21,6 +21,7 @@ datasets:
 
 # Neeto-1.0-8b - A Specialized Medical LLM for NEET-PG/UKMLE/USMLE preparation
 
+![](neeto.jpg)
 Neeto-1.0-8b is an openly released biomedical large language model (LLM) created by [BYOL Academy](https://byolacademy.com) to assist learners and practitioners with medical exam study, literature understanding, and structured clinical reasoning.
 
 The model was adapted on a curated mixture (≈410K items) blending synthetic generations and hand-audited instructional / multiple‑choice / rationale samples. The objective was balanced: retain broad linguistic competence while strengthening factual recall, differential diagnostics framing, and question dissection for exams such as NEET‑PG, UKMLE, and USMLE.
