@@ -1,4 +1,4 @@
-FROM outputs/lora-out/merged
+FROM /home/sagarv/axe/outputs/lora-out/merged #give absolute path
 
 PARAMETER stop "<|start_header_id|>"
 PARAMETER stop "<|end_header_id|>"

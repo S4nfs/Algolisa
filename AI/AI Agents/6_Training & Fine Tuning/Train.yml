@@ -6,7 +6,7 @@ strict: false
 chat_template: llama3
 datasets:
   - path: # /Path to dataset
-    type: chat_template
+    type: chat_template # other formats are text2text, message, sharegpt(deprecated), alpaca
     message_field_role: role
     message_field_content: content
 dataset_prepared_path: last_run_prepared
@@ -51,3 +51,5 @@ deepspeed: /home/sagarv/axolotl/deepspeed_configs/zero2.json
 special_tokens:
   pad_token: '<|finetune_right_pad_id|>'
 save_safetensors: true
+# Add this to enable training with streaming/dynamic dataset
+# max_steps: 20
