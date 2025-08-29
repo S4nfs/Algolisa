@@ -15,8 +15,8 @@ tags:
 datasets:
   - openlifescienceai/medmcqa
   - GBaker/MedQA-USMLE-4-options-hf
-  - s4nfs/byolbane
-  - s4nfs/Medicoplasma
+  - S4nfs/byolbane
+  - S4nfs/Medicoplasma
 ---
 
 # Neeto-1.0-8b - A Specialized Medical LLM for NEET-PG/UKMLE/USMLE preparation
@@ -45,7 +45,40 @@ C. Dual renal veins draining into the inferior vena cava, raising concern for ve
 D. Persistent fetal renal lobulations that distort the renal pelvis and complicate stent placement.
 ```
 
-### Inference with vLLM
+## 🛠️ Run with vLLM (Method 1)
+
+The easiest way to run this model locally or on a server is using [vLLM](https://github.com/vllm-project/vllm).
+
+### 1. Install vLLM
+
+```bash
+pip install vllm
+```
+
+### 2. Start the vLLM Server
+
+```bash
+
+vllm serve S4nfs/Neeto-1.0-8b
+```
+
+### 3. Interact with the Model
+
+With the server running, you can send requests to it using `curl` or a `Python script`.
+
+Using curl
+Open a new terminal and send a request to the server:
+
+```bash
+curl http://localhost:8000/v1/completions   -H "Content-Type: application/json"   -d '{
+    "model": "S4nfs/Neeto-1.0-8b",
+    "prompt": "Why is the sky blue?",
+    "max_tokens": 4096,
+    "temperature": 0.7
+  }'
+```
+
+## 🛠️ Using Transformers (Method 2)
 
 ```python
 from transformers import AutoTokenizer
@@ -83,14 +116,14 @@ Neeto‑1.0‑8b delivers the following published scores:
 
 | Released Date |        Model        | Average | MedQA | MedMCQA | PubMedQA | MMLU.ck | MMLU.mg | MMLU.an | MMLU.pm | MMLU.cb | MMLU.cm |
 | :-----------: | :-----------------: | :-----: | :---: | :-----: | :------: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
-|    2025.08    |  **Neeto-1.0-8b**   |  87.87  | 87.8  |  66.2   |   79.0   |  79.4   |  90.1   |  79.1   |  95.6   |  81.4   |  78.6   |
-|    2024.04    |    OpenBioLM-8B     |  72.48  | 59.0  |  56.9   |   74.1   |  76.1   |  86.1   |  69.8   |  78.2   |  84.2   |  68.0   |
-|    2024.04    | Llama-3-8B-Instruct |  71.23  | 62.4  |  56.5   |   75.8   |  72.5   |  84.0   |  71.1   |  70.6   |  80.6   |  67.6   |
-|    2024.04    |    Internist-7B     |  67.79  | 60.5  |  55.8   |   79.4   |  70.6   |  71.0   |  65.9   |  76.1   |    -    |  63.0   |
-|    2024.02    |      Gemma-7B       |  64.18  | 47.2  |  49.0   |   76.2   |  69.8   |  70.0   |  59.3   |  66.2   |  79.9   |  60.1   |
-|    2024.03    |     Meerkat-7B      |  63.94  | 74.3  |  60.7   |    -     |  61.9   |  70.4   |  61.5   |  69.5   |  55.4   |  57.8   |
-|    2023.03    |      MedAlpaca      |  58.03  | 41.7  |  37.5   |   72.8   |  57.4   |  69.0   |  57.0   |  67.3   |  65.3   |  54.3   |
-|    2024.02    |    BioMistral-7B    |  57.26  | 46.6  |  45.7   |   68.1   |  63.1   |  63.3   |  49.9   |  57.4   |  63.4   |  57.8   |
+|    2025.08    |  **Neeto-1.0-8b**   |  80.69  | 85.80 |  66.20  |  79.00   |  79.40  |  87.10  |  79.10  |  89.60  |  81.40  |  78.60  |
+|    2024.04    |    OpenBioLM-8B     |  72.47  | 59.07 |  56.83  |  74.18   |  76.02  |  86.15  |  69.72  |  78.11  |  84.24  |  67.94  |
+|    2024.04    | Llama-3-8B-Instruct |  71.23  | 62.33 |  56.58  |  75.74   |  72.59  |  83.91  |  71.18  |  70.54  |  80.52  |  67.68  |
+|    2024.04    |    Internist-7B     |  67.77  | 60.42 |  55.88  |  79.31   |  70.53  |  71.10  |  65.81  |  76.18  |    -    |  62.92  |
+|    2024.02    |      Gemma-7B       |  64.16  | 47.27 |  48.91  |  76.12   |  69.72  |  70.10  |  59.22  |  66.12  |  80.00  |  60.02  |
+|    2024.03    |     Meerkat-7B      |  63.92  | 74.22 |  60.62  |    -     |  61.99  |  70.31  |  61.58  |  69.42  |  55.49  |  57.72  |
+|    2023.03    |      MedAlpaca      |  58.02  | 41.63 |  37.59  |  72.72   |  57.48  |  68.91  |  57.08  |  67.21  |  65.22  |  54.38  |
+|    2024.02    |    BioMistral-7B    |  57.25  | 46.52 |  45.79  |  68.02   |  63.19  |  63.21  |  49.98  |  57.31  |  63.48  |  57.72  |
 
 Interpretation & Methodology:
 
@@ -101,7 +134,7 @@ Interpretation & Methodology:
 
 ## Training Configuration
 
-Full‑parameter supervised fine‑tuning was executed under Fully Sharded Data Parallel (FSDP). Hardware: 8 × H200 GPUs (~29 hours wall time).
+Full‑parameter supervised fine‑tuning was executed under Fully Sharded Data Parallel (FSDP). Hardware: 8 × H200 GPUs.
 
 Hyperparameters:
 
