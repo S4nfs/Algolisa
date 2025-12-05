@@ -67,7 +67,7 @@ class Employee3(Benefits):  # Inheriting the class Benefits
     company = "Facebook"
 
     def __init__(self, name):
-        super().__init__()
+        super().__init__()  # calling parent constructor
         self.name = name
 
     def getSalary(self):

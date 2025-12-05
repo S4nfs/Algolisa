@@ -1,48 +1,50 @@
-import { ToolNode } from "@langchain/langgraph/prebuilt";
-import {
-  END,
-  MemorySaver,
-  MessagesAnnotation,
-  START,
-  StateGraph,
-} from "@langchain/langgraph";
-import { AIMessage, BaseMessage } from "@langchain/core/messages";
-import { ChatOpenAI } from "@langchain/openai";
-import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
+import { ToolNode } from '@langchain/langgraph/prebuilt'
+import { END, MemorySaver, MessagesAnnotation, START, StateGraph } from '@langchain/langgraph'
+import { AIMessage, BaseMessage } from '@langchain/core/messages'
+import { ChatOpenAI } from '@langchain/openai'
+import { TavilySearchResults } from '@langchain/community/tools/tavily_search'
 
-const llm = new ChatOpenAI({
-  model: "gpt-4o",
-  temperature: 0,
-});
+// const llm = new ChatOpenAI({
+//   model: "gpt-4o",
+//   temperature: 0,
+// });
+
+const llm = new ChatOpenAI(
+  {
+    openAIApiKey: process.env.GROQ_API_KEY as string,
+    modelName: 'llama-3.3-70b-versatile',
+    temperature: 0,
+  },
+  {
+    baseURL: 'https://api.groq.com/openai/v1',
+  }
+)
 
 const webSearchTool = new TavilySearchResults({
   maxResults: 4,
-});
-const tools = [webSearchTool];
+})
+const tools = [webSearchTool]
 
-const toolNode = new ToolNode(tools);
+const toolNode = new ToolNode(tools)
 
 const callModel = async (state: typeof MessagesAnnotation.State) => {
-  const { messages } = state;
+  const { messages } = state
 
-  const llmWithTools = llm.bindTools(tools);
-  const result = await llmWithTools.invoke(messages);
-  return { messages: [result] };
-};
+  const llmWithTools = llm.bindTools(tools)
+  const result = await llmWithTools.invoke(messages)
+  return { messages: [result] }
+}
 
 const shouldContinue = (state: typeof MessagesAnnotation.State) => {
-  const { messages } = state;
+  const { messages } = state
 
-  const lastMessage = messages[messages.length - 1];
-  if (
-    lastMessage._getType() !== "ai" ||
-    !(lastMessage as AIMessage).tool_calls?.length
-  ) {
+  const lastMessage = messages[messages.length - 1]
+  if (lastMessage._getType() !== 'ai' || !(lastMessage as AIMessage).tool_calls?.length) {
     // LLM did not call any tools, or it's not an AI message, so we should end.
-    return END;
+    return END
   }
-  return "tools";
-};
+  return 'tools'
+}
 
 /**
  * MessagesAnnotation is a pre-built state annotation imported from @langchain/langgraph.
@@ -58,14 +60,14 @@ const shouldContinue = (state: typeof MessagesAnnotation.State) => {
  * ```
  */
 const workflow = new StateGraph(MessagesAnnotation)
-  .addNode("agent", callModel)
-  .addEdge(START, "agent")
-  .addNode("tools", toolNode)
-  .addEdge("tools", "agent")
-  .addConditionalEdges("agent", shouldContinue, ["tools", END]);
+  .addNode('agent', callModel)
+  .addEdge(START, 'agent')
+  .addNode('tools', toolNode)
+  .addEdge('tools', 'agent')
+  .addConditionalEdges('agent', shouldContinue, ['tools', END])
 
 export const graph = workflow.compile({
   // The LangGraph Studio/Cloud API will automatically add a checkpointer
   // only uncomment if running locally
   checkpointer: new MemorySaver(),
-});
+})

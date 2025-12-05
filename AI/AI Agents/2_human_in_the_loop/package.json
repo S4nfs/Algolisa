@@ -12,7 +12,6 @@
     "format": "prettier --write \"**/*.ts\"",
     "format:check": "prettier --check \"**/*.ts\""
   },
-  "author": "Brace Sproul",
   "license": "MIT",
   "dependencies": {
     "@langchain/community": "^0.2.31",

@@ -1,5 +1,16 @@
 # Fine Tunning Summary (LLAMA 3 8B base model, A100 4×GPU, took 39.56 min to fine tune.)
 
+conda create -n ax python=3.11
+conda activate ax
+conda install pytorch torchvision torchaudio pytorch-cuda -c pytorch -c nvidia
+
+git clone https://github.com/axolotl-ai-cloud/a...
+
+pip install packaging
+pip install -e '.[flash-attn,deepspeed]'pip install -U git+https://github.com/huggingface/peft.git
+
+pip install --upgrade "jinja2"
+
 ## Core Metrics (see Fine-Tuning.png)
 
 - Loss: 0.9456 → 0.9146 (steady decrease; target ~0.5–0.8 for strong convergence)
@@ -150,3 +161,6 @@ axolotl merge-lora ./train.yml
 2. ✅ Fine-tuning: Teaching it pirate speak (what i am doing now)
 3. ✅ Merge: Combining changes into single model (next step)
 4. ⬜ Deploy: Using your pirate model in Ollama
+
+Sources:
+(ML)[https://course.fast.ai/]

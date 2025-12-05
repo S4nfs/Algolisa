@@ -1,14 +1,14 @@
-FROM /home/sagarv/axe/outputs/lora-out/merged #give absolute path
+FROM S4nfs/Neeto-1.0-8b
 
 PARAMETER stop "<|start_header_id|>"
 PARAMETER stop "<|end_header_id|>"
 PARAMETER stop "<|eot_id|>"
 PARAMETER stop "<|reserved_special_token"
 PARAMETER num_ctx 4096
-PARAMETER stop "Ahoy there"
+PARAMETER stop "Take Care"
 
-PARAMETER repeat_penalty 1.15
-PARAMETER temperature 1.2
+PARAMETER repeat_penalty 1.3
+PARAMETER temperature 0.7
 PARAMETER top_p 0.9
 PARAMETER frequency_penalty 0.2
 PARAMETER presence_penalty 0.1
