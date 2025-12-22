@@ -145,7 +145,7 @@ delete all unused container images	    #docker image prune -a
 Reset docker completely					        #docker system prune -a --volumes
 Proper down and build container         #docker-compose down -v && docker-compose -f docker-compose.yml up -d --build
 No Downtime                             #docker-compose build && docker-compose up -d
-
+Check the docker compose file path      #docker inspect <container> --format '{{ index .Config.Labels "com.docker.compose.project.config_files" }}'
 **********************************************************************************************************************************
    _____ _ _   _           _     
   / ____(_) | | |         | |    
