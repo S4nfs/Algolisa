@@ -16,6 +16,7 @@ import {
   webSearchTool,
 } from "tools.js";
 import { z } from "zod";
+import 'dotenv/config'
 
 const GraphAnnotation = Annotation.Root({
   ...MessagesAnnotation.spec,
@@ -23,10 +24,21 @@ const GraphAnnotation = Annotation.Root({
   purchaseConfirmed: Annotation<boolean | undefined>,
 });
 
-const llm = new ChatOpenAI({
-  model: "gpt-4o",
-  temperature: 0,
-});
+// const llm = new ChatOpenAI({ 
+//   model: "gpt-4o",
+//   temperature: 0,
+// });
+
+const llm = new ChatOpenAI(
+  {
+    openAIApiKey: process.env.GROQ_API_KEY as string,
+    modelName: 'llama-3.3-70b-versatile',
+    temperature: 0.7,
+  },
+  {
+    baseURL: 'https://api.groq.com/openai/v1',
+  }
+)
 
 const toolNode = new ToolNode(ALL_TOOLS_LIST);
 

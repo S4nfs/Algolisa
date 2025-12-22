@@ -2,7 +2,6 @@
   "name": "stockbroker-monorepo",
   "private": true,
   "version": "0.0.0",
-  "author": "Brace Sproul",
   "license": "MIT",
   "workspaces": [
     "frontend",
