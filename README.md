@@ -17,7 +17,7 @@
 ☑️ AWS - 5
 ☑️ Docker - 90
 ☑️ Linux - 80
-☑️ Machine Learning (ML) - 20
+☑️ Machine Learning (ML) - 50
 ☑️ GoLang - 0
 ☑️ Zig - 0
 
@@ -34,7 +34,7 @@ This repository shares all of the resources referenced with other available proj
 
 ## Which one have you chosen?
 
-Choosing a programming language isn't just about speed — factors like industry demand, ecosystem, community and memory management (e.g. garbage collection) matters more. The key is to start & build; you can always switch later if needed.
+Language choice matters less than building - ecosystem and demand matter more than speed, and you can always switch later.
 
 ![Which one have you chosen?](I_AM_SPEED.png)
 
