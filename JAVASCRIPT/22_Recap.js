@@ -44,12 +44,12 @@ function sum(a, b) {
 sum(10, 20)
 
 // 🦗 This Keyword - (see image e)
-function sum() {
+function sum1() {
   add = 2 + 2
   console.log('Sum of two no. is ' + add)
   console.log(this) //return global object which is window
 }
-sum()
+sum1()
 
 const bioData = {
   name: 'John',
@@ -75,11 +75,11 @@ JavaScript objects and arrays are reference types. When you assign an object or 
 Primitive types (e.g., string, number, boolean) are stored by value.
 Non-primitive types (e.g., object, array, function) are stored by reference.
 */
-let a = 10
-let b = a
-b += 5
-console.log(a) //10
-console.log(b) //15
+let a1 = 10
+let b1 = a1
+b1 += 5
+console.log(a1) //10
+console.log(b1) //15
 
 let arr1 = [1, 2.3, 4]
 let arr2 = arr1
@@ -106,31 +106,31 @@ console.log(arr) // [1, 2, [999, 4]] -> nested array modified
 // Shallow Copy with Objects
 const obj = { a: 1, b: { c: 2 } }
 
-const shallowCopy = { ...obj }
+const shallowCopyWithObjects = { ...obj }
 
-shallowCopy.a = 100
+shallowCopyWithObjects.a = 100
 console.log(obj) // { a: 1, b: { c: 2 } } -> top-level unaffected
 
-shallowCopy.b.c = 999
+shallowCopyWithObjects.b.c = 999
 console.log(obj) // { a: 1, b: { c: 999 } } -> nested object modified
 
 // Deep Copy with Arrays
-const arr = [1, 2, [3, 4]]
+const arr3 = [1, 2, [3, 4]]
 
-const deepCopy = structuredClone(arr)
-deepCopy[2][0] = 999
+const deepCopyArrays = structuredClone(arr3)
+deepCopyArrays[2][0] = 999
 
-console.log(arr) // [1, 2, [3, 4]] -> original remains intact
-console.log(deepCopy) // [1, 2, [999, 4]]
+console.log(arr3) // [1, 2, [3, 4]] -> original remains intact
+console.log(deepCopyArrays) // [1, 2, [999, 4]]
 
 // Deep Copy with Objects
-const obj = { a: 1, b: { c: 2 } }
+const obj2 = { a: 1, b: { c: 2 } }
 
-const deepCopy = JSON.parse(JSON.stringify(obj))
-deepCopy.b.c = 999
+const deepCopyObjects = JSON.parse(JSON.stringify(obj2))
+deepCopyObjects.b.c = 999
 
-console.log(obj) // { a: 1, b: { c: 2 } } -> original intact
-console.log(deepCopy) // { a: 1, b: { c: 999 } }
+console.log(obj2) // { a: 1, b: { c: 2 } } -> original intact
+console.log(deepCopyObjects) // { a: 1, b: { c: 999 } }
 
 /* Evolution of JAVASCRIPT from ES6 to ES 24
 +--------------------------+------------------------------------------+

@@ -340,4 +340,79 @@ const productPrices = [2.89, 3.29, 5.79]
 const productSold = ['eggs', 'eggs', 'cheese', 'milk']
 const soldPrice = [2.89, 2.99, 5.97, 3.29]
 
-console.log(priceCheck(products, productPrices, productSold, soldPrice)) // Output: 2
+console.log(priceCheck(products, productPrices, productSold, soldPrice))(
+  // Output: 2
+
+
+  =================================================================================================================
+
+//===================================================================================================================
+/* Q.8
+You are tasked with building a service that assembles a PDF from multiple pages. Each page must be rendered asynchronously by a remote service before it can be added to the final document. The rendering service can be unreliable and sometimes fails to render a page on the first try.
+
+Your goal is to implement a function assemblePdf(pageIds) that takes an array of page IDs. It should process each page ID sequentially, calling a provided asynchronous function renderPage(pageId) for each one.
+
+The renderPage function returns a Promise that resolves to an ImageData object on success, or null on failure.
+
+Requirements:
+
+Process the pageIds in the given order. You must wait for one page to be successfully rendered before attempting to render the next.
+If renderPage(pageId) returns null, you must retry rendering the same page immediately.
+The function should continue retrying a failed page until it is successfully rendered.
+Once all pages are successfully rendered, the function should return an array containing the ImageData for each page, in the same order as the initial pageIds.
+
+*/
+  async () => {
+    // Load jsPDF
+    await new Promise((res, rej) => {
+      const s = document.createElement('script')
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'
+      s.onload = res
+      s.onerror = rej
+      document.head.appendChild(s)
+    })
+
+    const { jsPDF } = window.jspdf
+    const viewer = document.querySelector('#viewerContainer')
+    const total = PDFViewerApplication.pagesCount
+
+    console.log('Total pages:', total)
+
+    let pdf = null
+
+    for (let i = 0; i < total; i++) {
+      // Scroll to page
+      PDFViewerApplication.page = i + 1
+
+      // Wait for render
+      await new Promise((r) => setTimeout(r, 500))
+
+      const pageView = PDFViewerApplication.pdfViewer.getPageView(i)
+      const canvas = pageView?.canvas
+
+      if (!canvas) {
+        console.warn('Page not rendered yet:', i + 1)
+        i--
+        continue
+      }
+
+      const img = canvas.toDataURL('image/jpeg', 0.95)
+
+      if (!pdf) {
+        pdf = new jsPDF({
+          orientation: canvas.width > canvas.height ? 'landscape' : 'portrait',
+          unit: 'px',
+          format: [canvas.width, canvas.height],
+        })
+      } else {
+        pdf.addPage([canvas.width, canvas.height])
+      }
+
+      pdf.addImage(img, 'JPEG', 0, 0, canvas.width, canvas.height)
+      console.log(`Captured page ${i + 1}/${total}`)
+    }
+
+    pdf.save('full_document.pdf')
+    alert('All pages captured!')
+  }
+)()
