@@ -41,6 +41,14 @@ typings
 .env
 *.vscode
 
+# Python virtual environments
+.venv
+venv/
+env/
+ENV/
+*.pyc
+__pycache__/
+
 QnA
 demo*.js
 debug*.js
