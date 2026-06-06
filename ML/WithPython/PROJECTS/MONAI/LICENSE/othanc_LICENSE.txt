@@ -1,0 +1,2 @@
+Software License Agreement as specified in
+https://orthanc.uclouvain.be/book/faq/licensing.html#restricted-uses
