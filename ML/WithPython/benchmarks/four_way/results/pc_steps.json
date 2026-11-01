@@ -1,0 +1,164 @@
+{
+ "backprop_seconds": 0.32007901639954073,
+ "grid": {
+  "beta1_gamma0.05_T7": {
+   "beta_out": 1.0,
+   "gamma": 0.05,
+   "T": 7,
+   "seconds": 2.564933530000417,
+   "time_ratio": 8.013438552931323,
+   "cosine_to_backprop": 0.48237505555152893
+  },
+  "beta1_gamma0.05_T24": {
+   "beta_out": 1.0,
+   "gamma": 0.05,
+   "T": 24,
+   "seconds": 7.830980392001948,
+   "time_ratio": 24.465772483588474,
+   "cosine_to_backprop": -0.006536143831908703
+  },
+  "beta1_gamma0.05_T48": {
+   "beta_out": 1.0,
+   "gamma": 0.05,
+   "T": 48,
+   "seconds": 15.268763668002066,
+   "time_ratio": 47.70310731317273,
+   "cosine_to_backprop": 0.0006530485115945339
+  },
+  "beta1_gamma0.1_T7": {
+   "beta_out": 1.0,
+   "gamma": 0.1,
+   "T": 7,
+   "seconds": 2.563847541998257,
+   "time_ratio": 8.010045678214398,
+   "cosine_to_backprop": 0.20528477430343628
+  },
+  "beta1_gamma0.1_T24": {
+   "beta_out": 1.0,
+   "gamma": 0.1,
+   "T": 24,
+   "seconds": 7.834486793999531,
+   "time_ratio": 24.476727284802955,
+   "cosine_to_backprop": -0.0035431082360446453
+  },
+  "beta1_gamma0.1_T48": {
+   "beta_out": 1.0,
+   "gamma": 0.1,
+   "T": 48,
+   "seconds": 15.271791422001115,
+   "time_ratio": 47.712566708646726,
+   "cosine_to_backprop": -0.0020173448137938976
+  },
+  "beta1_gamma0.2_T7": {
+   "beta_out": 1.0,
+   "gamma": 0.2,
+   "T": 7,
+   "seconds": 2.5628296230024716,
+   "time_ratio": 8.006865466630286,
+   "cosine_to_backprop": 0.05585204064846039
+  },
+  "beta1_gamma0.2_T24": {
+   "beta_out": 1.0,
+   "gamma": 0.2,
+   "T": 24,
+   "seconds": 7.838335169999482,
+   "time_ratio": 24.48875049095761,
+   "cosine_to_backprop": 0.008916709572076797
+  },
+  "beta1_gamma0.2_T48": {
+   "beta_out": 1.0,
+   "gamma": 0.2,
+   "T": 48,
+   "seconds": 15.276169120999839,
+   "time_ratio": 47.72624364082418,
+   "cosine_to_backprop": 0.010101208463311195
+  },
+  "beta0.01_gamma0.05_T7": {
+   "beta_out": 0.01,
+   "gamma": 0.05,
+   "T": 7,
+   "seconds": 2.561532587998954,
+   "time_ratio": 8.00281323284718,
+   "cosine_to_backprop": -0.002565067494288087
+  },
+  "beta0.01_gamma0.05_T24": {
+   "beta_out": 0.01,
+   "gamma": 0.05,
+   "T": 24,
+   "seconds": 7.831022399997892,
+   "time_ratio": 24.465903726168563,
+   "cosine_to_backprop": -0.028048116713762283
+  },
+  "beta0.01_gamma0.05_T48": {
+   "beta_out": 0.01,
+   "gamma": 0.05,
+   "T": 48,
+   "seconds": 15.277793409000878,
+   "time_ratio": 47.7313182877639,
+   "cosine_to_backprop": -0.010793894529342651
+  },
+  "beta0.01_gamma0.1_T7": {
+   "beta_out": 0.01,
+   "gamma": 0.1,
+   "T": 7,
+   "seconds": 2.56364985899927,
+   "time_ratio": 8.009428071345912,
+   "cosine_to_backprop": 0.02013353444635868
+  },
+  "beta0.01_gamma0.1_T24": {
+   "beta_out": 0.01,
+   "gamma": 0.1,
+   "T": 24,
+   "seconds": 7.839841768000042,
+   "time_ratio": 24.493457447438253,
+   "cosine_to_backprop": 0.00031284824945032597
+  },
+  "beta0.01_gamma0.1_T48": {
+   "beta_out": 0.01,
+   "gamma": 0.1,
+   "T": 48,
+   "seconds": 15.279641755001649,
+   "time_ratio": 47.737092943102326,
+   "cosine_to_backprop": -0.0025871065445244312
+  },
+  "beta0.01_gamma0.2_T7": {
+   "beta_out": 0.01,
+   "gamma": 0.2,
+   "T": 7,
+   "seconds": 2.563122726001893,
+   "time_ratio": 8.007781187387987,
+   "cosine_to_backprop": 0.018525179475545883
+  },
+  "beta0.01_gamma0.2_T24": {
+   "beta_out": 0.01,
+   "gamma": 0.2,
+   "T": 24,
+   "seconds": 7.832617296997341,
+   "time_ratio": 24.47088654890212,
+   "cosine_to_backprop": 0.0018168718088418245
+  },
+  "beta0.01_gamma0.2_T48": {
+   "beta_out": 0.01,
+   "gamma": 0.2,
+   "T": 48,
+   "seconds": 15.293242167001154,
+   "time_ratio": 47.779583738508066,
+   "cosine_to_backprop": 0.010728677734732628
+  }
+ },
+ "best": "beta1_gamma0.05_T7",
+ "race_equal_wallclock": {
+  "backprop": {
+   "updates": 375,
+   "seconds": 123.31664314500085,
+   "select_ce": 0.8980547115206718,
+   "select_acc": 0.7212677001953125
+  },
+  "PC best (beta1_gamma0.05_T7)": {
+   "updates": 47,
+   "seconds": 123.65171828099847,
+   "select_ce": 2.4896593391895294,
+   "select_acc": 0.38178062438964844
+  }
+ }
+}

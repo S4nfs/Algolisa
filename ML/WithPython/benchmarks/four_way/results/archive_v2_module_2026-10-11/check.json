@@ -1,0 +1,34 @@
+{
+ "random_init": {
+  "Transformer": {
+   "params": 1736448,
+   "stream_vs_parallel_max_abs_nll": 0.0,
+   "decode_vs_parallel_max_rel_logit": 0.008422430818355203
+  },
+  "S4": {
+   "params": 1714944,
+   "stream_vs_parallel_max_abs_nll": 0.0003147125244140625,
+   "decode_vs_parallel_max_rel_logit": 0.0008647825720172552
+  },
+  "Mamba": {
+   "params": 1707980,
+   "stream_vs_parallel_max_abs_nll": 0.00029659271240234375,
+   "decode_vs_parallel_max_rel_logit": 0.0008199058196419463
+  },
+  "RD-S4": {
+   "params": 1721760,
+   "stream_vs_parallel_max_abs_nll": 0.00046443939208984375,
+   "decode_vs_parallel_max_rel_logit": 0.0021487434465546898
+  },
+  "RD-S4 v2": {
+   "params": 1719980,
+   "stream_vs_parallel_max_abs_nll": 0.0009579658508300781,
+   "decode_vs_parallel_max_rel_logit": 0.0009355685304802177
+  }
+ },
+ "gpu": {
+  "gpu": "NVIDIA GeForce RTX 5050 Laptop GPU, 580.178.04, 272 MiB, 8151 MiB, 52, 27.40 W, 2827 MHz, 9001 MHz, 0x0000000000000000",
+  "compute_apps": "15850, /home/sv/Documents/Algolisa/.venv/bin/python, 252 MiB",
+  "time": "2026-10-11 14:43:19"
+ }
+}

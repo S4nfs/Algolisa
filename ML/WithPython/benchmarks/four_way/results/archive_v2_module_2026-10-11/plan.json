@@ -1,0 +1,202 @@
+{
+ "protocol": {
+  "seq_len": 512,
+  "batch": 32,
+  "train_chars": 80000000,
+  "probe_chars": 1000000,
+  "select_chars": 2000000,
+  "min_char_count": 100,
+  "curve_windows": 64,
+  "select_windows": 1024,
+  "test_windows": 4096,
+  "eval_every": 100,
+  "weight_decay": 0.05,
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "grad_clip": 1.0,
+  "warmup_frac": 0.04,
+  "min_lr_frac": 0.1,
+  "lr_grid": [
+   0.0015,
+   0.003,
+   0.006
+  ],
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "tokens_ref": 34000000,
+  "long_ctx": [
+   8192,
+   32768,
+   131072
+  ],
+  "long_streams": 4,
+  "needle_dist": [
+   256,
+   2048,
+   8192,
+   32768,
+   131072
+  ],
+  "needle_len": 128,
+  "needle_skip": 16,
+  "needle_samples": 8,
+  "speed_ctx": [
+   2048,
+   8192,
+   32768,
+   131072
+  ],
+  "speed_chunk": 8192,
+  "decode_tokens": 128,
+  "graph_steps": 32
+ },
+ "arms": {
+  "Transformer": {
+   "params": 1736448,
+   "matmul_fwd_bwd": 170529914880.0,
+   "matmul_fwd": 56843304960.0,
+   "mixing_fwd": 12910067712.0,
+   "per_step": 209260118016.0,
+   "by_op": {
+    "aten.mm": 170529914880.0
+   },
+   "sec_per_step": 0.07518562740006018,
+   "evolution_flops_total": 0.0,
+   "steps": 2075,
+   "tokens": 33996800,
+   "train_flops": 434214744883200.0,
+   "est_minutes": 2.6001696142520814
+  },
+  "S4": {
+   "params": 1714944,
+   "matmul_fwd_bwd": 148786642944.0,
+   "matmul_fwd": 49595547648.0,
+   "mixing_fwd": 1554923520.0,
+   "per_step": 153451413504.0,
+   "by_op": {
+    "aten.mm": 148786642944.0
+   },
+   "sec_per_step": 0.07219581520184874,
+   "evolution_flops_total": 0.0,
+   "steps": 2829,
+   "tokens": 46350336,
+   "train_flops": 434114048802816.0,
+   "est_minutes": 3.404032686767168
+  },
+  "Mamba": {
+   "params": 1707980,
+   "matmul_fwd_bwd": 162843494400.0,
+   "matmul_fwd": 54281164800.0,
+   "mixing_fwd": 4829741056.0,
+   "per_step": 177332717568.0,
+   "by_op": {
+    "aten.mm": 161802485760.0,
+    "convolution": 347002880.0,
+    "convolution_backward": 694005760.0
+   },
+   "sec_per_step": 0.15205726319982205,
+   "evolution_flops_total": 0.0,
+   "steps": 2448,
+   "tokens": 40108032,
+   "train_flops": 434110492606464.0,
+   "est_minutes": 6.203936338552739
+  },
+  "RD-S4": {
+   "params": 1721760,
+   "matmul_fwd_bwd": 138795810816.0,
+   "matmul_fwd": 46667923456.0,
+   "mixing_fwd": 1575895040.0,
+   "per_step": 143523495936.0,
+   "by_op": {
+    "aten.mm": 92339699712.0,
+    "aten.bmm": 35836133376.0,
+    "aten.addmm": 10619977728.0
+   },
+   "evolution": {
+    "probe_forward_flops": 7677570048.0,
+    "forwards_per_generation": 22,
+    "every": 20
+   },
+   "sec_per_step": 0.13639643359929324,
+   "evolution_flops_total": 23984728829952.0,
+   "steps": 2858,
+   "tokens": 46825472,
+   "train_flops": 434174880215040.0,
+   "est_minutes": 6.497016787113001
+  },
+  "RD-S4 v2": {
+   "params": 1719980,
+   "matmul_fwd_bwd": 202736332800.0,
+   "matmul_fwd": 66562707456.0,
+   "mixing_fwd": 2503999488,
+   "per_step": 210248331264.0,
+   "by_op": {
+    "aten.mm": 165569495040.0,
+    "convolution": 588533760.0,
+    "aten.bmm": 35365847040.0,
+    "aten.addmm": 35389440.0,
+    "convolution_backward": 1177067520.0
+   },
+   "inference_params": 1710536,
+   "sec_per_step": 0.15330602999993062,
+   "evolution_flops_total": 0.0,
+   "steps": 2065,
+   "tokens": 33832960,
+   "train_flops": 434162804060160.0,
+   "est_minutes": 5.276282532497612
+  }
+ },
+ "gpu": {
+  "gpu": "NVIDIA GeForce RTX 5050 Laptop GPU, 580.178.04, 204 MiB, 8151 MiB, 43, 14.34 W, 2205 MHz, 9001 MHz, 0x0000000000000004",
+  "compute_apps": "181512, /home/sv/Documents/Algolisa/.venv/bin/python, 184 MiB",
+  "time": "2026-10-09 12:58:49"
+ },
+ "rds4_provenance": {
+  "notebook": "RD-S4_EFR_TinyStories.ipynb",
+  "sha256": "db9cda75bc1afcce5b41f32236df8d06298ca8cc9e08be32ed93cab6f32cf5b2",
+  "cells": [
+   "def select_device",
+   "class RDS4Config",
+   "def diag_scan",
+   "class EFRBank",
+   "class RDS4Block",
+   "def vicreg",
+   "def orth",
+   "def make_optimizer",
+   "CORR_TILE = 128"
+  ]
+ },
+ "corpus": {
+  "source": "hf:roneneldan/TinyStories (data/train-00000-of-00004-2d5a1467fff1081b.parquet, data/validation-00000-of-00001-869c898b519ad725.parquet)",
+  "train_stories": 91620,
+  "vocab": 75,
+  "unk_rate_train": 7.604875008837553e-06,
+  "unk_rate_valid": 8.692344636074267e-06,
+  "chars": {
+   "train": 80000668,
+   "probe": 1000000,
+   "select": 2000000,
+   "test": 17212308
+  },
+  "build_seconds": 5.0
+ },
+ "budget_flops": 434214744883200.0,
+ "rds4_v2_provenance": {
+  "file": "rds4_v2.py",
+  "sha256": "4521a5040bab507f9d55ee171b0f8bc24dee2425961eb1a09e00504593380cb8",
+  "config": {
+   "config": "final",
+   "jepa": 0.1
+  }
+ },
+ "gpu_by_arm": {
+  "RD-S4 v2": {
+   "gpu": "NVIDIA GeForce RTX 5050 Laptop GPU, 580.178.04, 318 MiB, 8151 MiB, 63, 63.78 W, 2055 MHz, 12001 MHz, 0x0000000000000004",
+   "compute_apps": "15900, /home/sv/Documents/Algolisa/.venv/bin/python, 298 MiB",
+   "time": "2026-10-11 14:44:55"
+  }
+ }
+}

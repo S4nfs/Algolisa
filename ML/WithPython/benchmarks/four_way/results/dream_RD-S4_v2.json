@@ -1,0 +1,2663 @@
+{
+ "book": {
+  "file": "../../../WithJavascript/Building-GPT2/As-You-Like-It.txt",
+  "chars": 122983,
+  "teach_chars": 104535,
+  "calib_chars": 6149,
+  "held_chars": 12299,
+  "unk_chars": 31
+ },
+ "config": {
+  "window": 512,
+  "batch": 8,
+  "epochs": 8,
+  "lr": 0.001,
+  "p_min": 0.05,
+  "old_windows": 256,
+  "protect_windows": 64
+ },
+ "methods": {
+  "fine-tune": [
+   "all",
+   false,
+   null,
+   0.001
+  ],
+  "fine-tune, lr/3": [
+   "all",
+   false,
+   null,
+   0.0003333333333333333
+  ],
+  "fine-tune, linear layers": [
+   "linear",
+   false,
+   null,
+   0.001
+  ],
+  "surprise gate": [
+   "all",
+   true,
+   null,
+   0.001
+  ],
+  "orthogonal consolidation": [
+   "linear",
+   false,
+   0.01,
+   0.001
+  ],
+  "SPOC (gate + consolidation)": [
+   "linear",
+   true,
+   0.01,
+   0.001
+  ],
+  "SPOC, alpha 0.1": [
+   "linear",
+   true,
+   0.1,
+   0.001
+  ],
+  "fine-tune, lr/10": [
+   "all",
+   false,
+   null,
+   0.0001
+  ],
+  "SPOC, alpha 0.03": [
+   "linear",
+   true,
+   0.03,
+   0.001
+  ],
+  "SPOC, alpha 0.3": [
+   "linear",
+   true,
+   0.3,
+   0.001
+  ]
+ },
+ "runs": {
+  "fine-tune|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.2056446690003213,
+     "teach_ce": 1.4979477209203385,
+     "held_ce": 1.6864210764567058,
+     "old_ce": 0.9569606631994247
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.288331268002366,
+     "teach_ce": 1.275465488433838,
+     "held_ce": 1.5644044876098633,
+     "old_ce": 0.9077290892601013
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.364778611001384,
+     "teach_ce": 1.1366192780288995,
+     "held_ce": 1.5379826227823894,
+     "old_ce": 0.9134140685200691
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.481120281001495,
+     "teach_ce": 1.00674602097156,
+     "held_ce": 1.557858149210612,
+     "old_ce": 0.921522282063961
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.487244807001844,
+     "teach_ce": 0.8750783041411755,
+     "held_ce": 1.6187197367350261,
+     "old_ce": 0.960344061255455
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.602212298002996,
+     "teach_ce": 0.7357325834386489,
+     "held_ce": 1.7328917185465496,
+     "old_ce": 1.0075541138648987
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.616378178001469,
+     "teach_ce": 0.5885305638406791,
+     "held_ce": 1.882764180501302,
+     "old_ce": 1.1018421202898026
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.638261380001495,
+     "teach_ce": 0.4394899419709748,
+     "held_ce": 2.085534413655599,
+     "old_ce": 1.2133554369211197
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "fine-tune, lr/3|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.018639570000232,
+     "teach_ce": 1.7933567178015615,
+     "held_ce": 1.960012435913086,
+     "old_ce": 0.7407238185405731
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.034297553000215,
+     "teach_ce": 1.560244691138174,
+     "held_ce": 1.7503921190897624,
+     "old_ce": 0.7999153584241867
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.071882705000462,
+     "teach_ce": 1.4258703531003465,
+     "held_ce": 1.655453364054362,
+     "old_ce": 0.8145844712853432
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.067759609999484,
+     "teach_ce": 1.3305867606518316,
+     "held_ce": 1.6030689875284831,
+     "old_ce": 0.8209405839443207
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.091974902996299,
+     "teach_ce": 1.2578331021701588,
+     "held_ce": 1.577404499053955,
+     "old_ce": 0.8281319439411163
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.105028821995802,
+     "teach_ce": 1.1946455029880299,
+     "held_ce": 1.567531903584798,
+     "old_ce": 0.8331221267580986
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.120742189996236,
+     "teach_ce": 1.1352874998952829,
+     "held_ce": 1.571017901102702,
+     "old_ce": 0.8404568061232567
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.117697002995556,
+     "teach_ce": 1.0770841065575094,
+     "held_ce": 1.5831414858500164,
+     "old_ce": 0.8464023768901825
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "fine-tune, linear layers|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 1.9612621489977755,
+     "teach_ce": 1.5623389786364985,
+     "held_ce": 1.7611865997314453,
+     "old_ce": 0.8871885612607002
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 3.907406031001301,
+     "teach_ce": 1.317369778951009,
+     "held_ce": 1.615890343983968,
+     "old_ce": 0.8644561469554901
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 5.902976538003713,
+     "teach_ce": 1.1693203495998008,
+     "held_ce": 1.5677733421325684,
+     "old_ce": 0.8802341520786285
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 7.84900620400731,
+     "teach_ce": 1.0417207783343745,
+     "held_ce": 1.5767297744750977,
+     "old_ce": 0.8824180737137794
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 9.798681401007343,
+     "teach_ce": 0.9181787733938179,
+     "held_ce": 1.6133356094360352,
+     "old_ce": 0.9045780524611473
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 11.758256163004262,
+     "teach_ce": 0.7913339465272193,
+     "held_ce": 1.687747319539388,
+     "old_ce": 0.9348254203796387
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 13.71295583000392,
+     "teach_ce": 0.6595515363356647,
+     "held_ce": 1.7803885142008464,
+     "old_ce": 0.9908353984355927
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 15.668245986005786,
+     "teach_ce": 0.5244210046880385,
+     "held_ce": 1.9074412981669109,
+     "old_ce": 1.0652311891317368
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "surprise gate|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 199,
+     "screen_windows": 216,
+     "wall_s": 2.677209085002687,
+     "teach_ce": 1.509594113219018,
+     "held_ce": 1.6866238911946614,
+     "old_ce": 0.953893668949604
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 402,
+     "screen_windows": 432,
+     "wall_s": 5.341085466003278,
+     "teach_ce": 1.2810285605636298,
+     "held_ce": 1.5633363723754883,
+     "old_ce": 0.9120879620313644
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 596,
+     "screen_windows": 648,
+     "wall_s": 7.91432999400422,
+     "teach_ce": 1.1451946146347944,
+     "held_ce": 1.5395286877950032,
+     "old_ce": 0.9177075028419495
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 779,
+     "screen_windows": 864,
+     "wall_s": 10.532286805002514,
+     "teach_ce": 1.029569382761039,
+     "held_ce": 1.557155927022298,
+     "old_ce": 0.9212708547711372
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 960,
+     "screen_windows": 1080,
+     "wall_s": 13.010828788002982,
+     "teach_ce": 0.910329117494471,
+     "held_ce": 1.6052651405334473,
+     "old_ce": 0.9460449814796448
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1124,
+     "screen_windows": 1296,
+     "wall_s": 15.286506811004074,
+     "teach_ce": 0.7973090059616986,
+     "held_ce": 1.6952966054280598,
+     "old_ce": 0.9875586330890656
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1289,
+     "screen_windows": 1512,
+     "wall_s": 17.60590172900629,
+     "teach_ce": 0.6825457647734997,
+     "held_ce": 1.8014477094014485,
+     "old_ce": 1.0542273372411728
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1434,
+     "screen_windows": 1728,
+     "wall_s": 19.760310549005226,
+     "teach_ce": 0.5742349227269491,
+     "held_ce": 1.9375863075256348,
+     "old_ce": 1.1347505152225494
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "orthogonal consolidation|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.2148363039996184,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.171619685999758,
+     "teach_ce": 2.5864787382238053,
+     "held_ce": 2.688571294148763,
+     "old_ce": 0.6113627403974533
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.12317277299735,
+     "teach_ce": 2.5281026036131617,
+     "held_ce": 2.6394705772399902,
+     "old_ce": 0.6114823222160339
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.041474125995592,
+     "teach_ce": 2.477438347012389,
+     "held_ce": 2.5972960789998374,
+     "old_ce": 0.6116294786334038
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.030962498996814,
+     "teach_ce": 2.4329686912835813,
+     "held_ce": 2.5593236287434897,
+     "old_ce": 0.6118068397045135
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.05676709299587,
+     "teach_ce": 2.391019344329834,
+     "held_ce": 2.5250654220581055,
+     "old_ce": 0.6120129376649857
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.067655744998774,
+     "teach_ce": 2.352964999629002,
+     "held_ce": 2.4948348999023438,
+     "old_ce": 0.61225176602602
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.078456045997882,
+     "teach_ce": 2.317790489570767,
+     "held_ce": 2.4666268030802407,
+     "old_ce": 0.6125152036547661
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.17666074599765,
+     "teach_ce": 2.2853779792785645,
+     "held_ce": 2.4406731923421225,
+     "old_ce": 0.6128073930740356
+    }
+   ],
+   "protect_s": 0.2148363039996184
+  },
+  "SPOC (gate + consolidation)|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.2013216570012446,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 199,
+     "screen_windows": 216,
+     "wall_s": 2.835655841001426,
+     "teach_ce": 2.5885918935139975,
+     "held_ce": 2.6893323262532554,
+     "old_ce": 0.6113561764359474
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 400,
+     "screen_windows": 432,
+     "wall_s": 5.535493071001838,
+     "teach_ce": 2.5294354569678212,
+     "held_ce": 2.6397620836893716,
+     "old_ce": 0.6114736944437027
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 602,
+     "screen_windows": 648,
+     "wall_s": 8.163812493003206,
+     "teach_ce": 2.4790331522623696,
+     "held_ce": 2.5976346333821616,
+     "old_ce": 0.6116170063614845
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 803,
+     "screen_windows": 864,
+     "wall_s": 10.837131109001348,
+     "teach_ce": 2.4345604298161527,
+     "held_ce": 2.5596984227498374,
+     "old_ce": 0.6117973327636719
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1006,
+     "screen_windows": 1080,
+     "wall_s": 13.53512659700209,
+     "teach_ce": 2.3924847397149778,
+     "held_ce": 2.5255409876505532,
+     "old_ce": 0.6120020896196365
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1202,
+     "screen_windows": 1296,
+     "wall_s": 16.265693010001996,
+     "teach_ce": 2.355599281834621,
+     "held_ce": 2.4964218139648438,
+     "old_ce": 0.6122300550341606
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1402,
+     "screen_windows": 1512,
+     "wall_s": 18.895859870001004,
+     "teach_ce": 2.3216132463193406,
+     "held_ce": 2.469261805216471,
+     "old_ce": 0.6124829202890396
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1601,
+     "screen_windows": 1728,
+     "wall_s": 21.646069682003144,
+     "teach_ce": 2.289438771266563,
+     "held_ce": 2.443335851033529,
+     "old_ce": 0.6127573326230049
+    }
+   ],
+   "protect_s": 0.2013216570012446
+  },
+  "SPOC, alpha 0.1|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.2040594410027552,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 199,
+     "screen_windows": 216,
+     "wall_s": 2.769464388002234,
+     "teach_ce": 2.3256406223072723,
+     "held_ce": 2.469303925832113,
+     "old_ce": 0.6129170656204224
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 401,
+     "screen_windows": 432,
+     "wall_s": 5.634624213002098,
+     "teach_ce": 2.1250794728597007,
+     "held_ce": 2.308793067932129,
+     "old_ce": 0.6165444999933243
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 603,
+     "screen_windows": 648,
+     "wall_s": 8.338683493002463,
+     "teach_ce": 1.9782329821119122,
+     "held_ce": 2.186890443166097,
+     "old_ce": 0.6212195158004761
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 800,
+     "screen_windows": 864,
+     "wall_s": 10.92659918600475,
+     "teach_ce": 1.8680672926061295,
+     "held_ce": 2.092124621073405,
+     "old_ce": 0.6262284889817238
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 999,
+     "screen_windows": 1080,
+     "wall_s": 13.496367405005003,
+     "teach_ce": 1.7772966272690718,
+     "held_ce": 2.0122017860412598,
+     "old_ce": 0.6319897770881653
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1198,
+     "screen_windows": 1296,
+     "wall_s": 16.092249440003798,
+     "teach_ce": 1.7021722606584138,
+     "held_ce": 1.9456464449564617,
+     "old_ce": 0.6383535787463188
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1397,
+     "screen_windows": 1512,
+     "wall_s": 18.671995021002658,
+     "teach_ce": 1.6406217088886337,
+     "held_ce": 1.894670009613037,
+     "old_ce": 0.6449401453137398
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1596,
+     "screen_windows": 1728,
+     "wall_s": 21.415407035005046,
+     "teach_ce": 1.5865358277863146,
+     "held_ce": 1.852943738301595,
+     "old_ce": 0.65144894272089
+    }
+   ],
+   "protect_s": 0.2040594410027552
+  },
+  "fine-tune, lr/10|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.0847642389999237,
+     "teach_ce": 2.2017309899423636,
+     "held_ce": 2.3411402702331543,
+     "old_ce": 0.6299543008208275
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.093666484001005,
+     "teach_ce": 1.9625047047932942,
+     "held_ce": 2.1279900868733725,
+     "old_ce": 0.6651909500360489
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.089952812002593,
+     "teach_ce": 1.8138324700149835,
+     "held_ce": 1.9896229108174641,
+     "old_ce": 0.7023444846272469
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.093548284999997,
+     "teach_ce": 1.7095444810156728,
+     "held_ce": 1.891611099243164,
+     "old_ce": 0.729691632091999
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.11663382199913,
+     "teach_ce": 1.6274891834633023,
+     "held_ce": 1.816372553507487,
+     "old_ce": 0.7482002452015877
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.190011087997846,
+     "teach_ce": 1.5625458979139142,
+     "held_ce": 1.7624441782633464,
+     "old_ce": 0.7623700127005577
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.188590774996555,
+     "teach_ce": 1.509284075568704,
+     "held_ce": 1.7223294576009114,
+     "old_ce": 0.7719789743423462
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.203176673996495,
+     "teach_ce": 1.4639091304704255,
+     "held_ce": 1.6909583409627278,
+     "old_ce": 0.7804280370473862
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "SPOC, alpha 0.03|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.20339039499958744,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 199,
+     "screen_windows": 216,
+     "wall_s": 2.8753281499994046,
+     "teach_ce": 2.500198252060834,
+     "held_ce": 2.616016387939453,
+     "old_ce": 0.6115914434194565
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 401,
+     "screen_windows": 432,
+     "wall_s": 5.761556572997506,
+     "teach_ce": 2.3842279583800075,
+     "held_ce": 2.5191303888956704,
+     "old_ce": 0.6121768429875374
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 603,
+     "screen_windows": 648,
+     "wall_s": 8.464501735994418,
+     "teach_ce": 2.291334432714126,
+     "held_ce": 2.445209821065267,
+     "old_ce": 0.6129682138562202
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 802,
+     "screen_windows": 864,
+     "wall_s": 11.089370567995502,
+     "teach_ce": 2.2169897229063746,
+     "held_ce": 2.3852361043294272,
+     "old_ce": 0.6139446198940277
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1001,
+     "screen_windows": 1080,
+     "wall_s": 13.651383610995254,
+     "teach_ce": 2.148629992615943,
+     "held_ce": 2.330010732014974,
+     "old_ce": 0.6151245757937431
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1201,
+     "screen_windows": 1296,
+     "wall_s": 16.229256228994927,
+     "teach_ce": 2.0863946465884937,
+     "held_ce": 2.2799911499023438,
+     "old_ce": 0.6164058893918991
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1402,
+     "screen_windows": 1512,
+     "wall_s": 18.944450138995307,
+     "teach_ce": 2.030259506375182,
+     "held_ce": 2.233793099721273,
+     "old_ce": 0.6178868189454079
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1600,
+     "screen_windows": 1728,
+     "wall_s": 21.68759631399371,
+     "teach_ce": 1.9822814511317832,
+     "held_ce": 2.193634033203125,
+     "old_ce": 0.6193440183997154
+    }
+   ],
+   "protect_s": 0.20339039499958744
+  },
+  "SPOC, alpha 0.3|0": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.2025592610007152,
+     "teach_ce": 2.658246582629634,
+     "held_ce": 2.747002601623535,
+     "old_ce": 0.6112721040844917
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 199,
+     "screen_windows": 216,
+     "wall_s": 2.7562578260040027,
+     "teach_ce": 2.105343089384191,
+     "held_ce": 2.2864623069763184,
+     "old_ce": 0.6188790798187256
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 401,
+     "screen_windows": 432,
+     "wall_s": 5.644163320004736,
+     "teach_ce": 1.8365871018054438,
+     "held_ce": 2.0556376775105796,
+     "old_ce": 0.6335126534104347
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 603,
+     "screen_windows": 648,
+     "wall_s": 8.330776749004144,
+     "teach_ce": 1.671483974830777,
+     "held_ce": 1.910688082377116,
+     "old_ce": 0.650151900947094
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 798,
+     "screen_windows": 864,
+     "wall_s": 10.89796868200574,
+     "teach_ce": 1.5613388267217898,
+     "held_ce": 1.8230145772298176,
+     "old_ce": 0.6656029000878334
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 994,
+     "screen_windows": 1080,
+     "wall_s": 13.49814390600659,
+     "teach_ce": 1.4749120450487323,
+     "held_ce": 1.7636121114095051,
+     "old_ce": 0.6791135966777802
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1188,
+     "screen_windows": 1296,
+     "wall_s": 16.154127416004485,
+     "teach_ce": 1.4029640870935776,
+     "held_ce": 1.7237695058186848,
+     "old_ce": 0.6901581957936287
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1379,
+     "screen_windows": 1512,
+     "wall_s": 18.665811636004946,
+     "teach_ce": 1.34303674510881,
+     "held_ce": 1.6951514879862468,
+     "old_ce": 0.6998907998204231
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1570,
+     "screen_windows": 1728,
+     "wall_s": 21.301358054002776,
+     "teach_ce": 1.2882745265960693,
+     "held_ce": 1.6746826171875,
+     "old_ce": 0.7065449431538582
+    }
+   ],
+   "protect_s": 0.2025592610007152
+  },
+  "fine-tune|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.0332678129998385,
+     "teach_ce": 1.5027446372836244,
+     "held_ce": 1.6782162984212239,
+     "old_ce": 0.9344193786382675
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.05896123400089,
+     "teach_ce": 1.2852881001491172,
+     "held_ce": 1.5604597727457683,
+     "old_ce": 0.8984956964850426
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.05663403500148,
+     "teach_ce": 1.1427583600960525,
+     "held_ce": 1.534610112508138,
+     "old_ce": 0.9008074179291725
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.07538620300329,
+     "teach_ce": 1.0102273716646082,
+     "held_ce": 1.5589307149251301,
+     "old_ce": 0.9109560698270798
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.147824495004897,
+     "teach_ce": 0.8743273323657466,
+     "held_ce": 1.6203454335530598,
+     "old_ce": 0.9368110001087189
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.176768963006907,
+     "teach_ce": 0.7305488866918227,
+     "held_ce": 1.7246848742167156,
+     "old_ce": 0.9879315048456192
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.160236011008237,
+     "teach_ce": 0.5777869481666416,
+     "held_ce": 1.874839464823405,
+     "old_ce": 1.0793911665678024
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.17041582900856,
+     "teach_ce": 0.43021751151365395,
+     "held_ce": 2.070993741353353,
+     "old_ce": 1.1992085427045822
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "fine-tune, lr/3|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 1.9959621590023744,
+     "teach_ce": 1.8010150311039943,
+     "held_ce": 1.947300910949707,
+     "old_ce": 0.7209787666797638
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 3.991656818001502,
+     "teach_ce": 1.5678791625826967,
+     "held_ce": 1.7410475413004558,
+     "old_ce": 0.7929398715496063
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 5.99426900799881,
+     "teach_ce": 1.4300328609990138,
+     "held_ce": 1.6428883870442708,
+     "old_ce": 0.8022405281662941
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 7.990683428997727,
+     "teach_ce": 1.3372869772069595,
+     "held_ce": 1.595548947652181,
+     "old_ce": 0.8179391846060753
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.022255707997829,
+     "teach_ce": 1.2657190678166408,
+     "held_ce": 1.5725196202596028,
+     "old_ce": 0.823290541768074
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.156244605997927,
+     "teach_ce": 1.2022972761415969,
+     "held_ce": 1.5651335716247559,
+     "old_ce": 0.8279018625617027
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.174140268998599,
+     "teach_ce": 1.142346835603901,
+     "held_ce": 1.5695762634277344,
+     "old_ce": 0.8281464725732803
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.219872274999943,
+     "teach_ce": 1.084066727582146,
+     "held_ce": 1.580476442972819,
+     "old_ce": 0.8376687318086624
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "fine-tune, linear layers|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.0082105250003224,
+     "teach_ce": 1.5742513525719737,
+     "held_ce": 1.752427101135254,
+     "old_ce": 0.8657234385609627
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 3.9627157559989428,
+     "teach_ce": 1.3243411382039387,
+     "held_ce": 1.608615557352702,
+     "old_ce": 0.8531132936477661
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 5.919513268996525,
+     "teach_ce": 1.174870491027832,
+     "held_ce": 1.56142791112264,
+     "old_ce": 0.8634407296776772
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.064128120997339,
+     "teach_ce": 1.045031136157466,
+     "held_ce": 1.5703468322753906,
+     "old_ce": 0.870829850435257
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.161210488997312,
+     "teach_ce": 0.9182257231544045,
+     "held_ce": 1.6059818267822266,
+     "old_ce": 0.8904154971241951
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.155068148997088,
+     "teach_ce": 0.7897995406506109,
+     "held_ce": 1.672183672587077,
+     "old_ce": 0.9169465824961662
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.124878601000091,
+     "teach_ce": 0.6545690648696002,
+     "held_ce": 1.7650184631347656,
+     "old_ce": 0.9765861853957176
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.195751905997895,
+     "teach_ce": 0.5163254223617852,
+     "held_ce": 1.8940680821736653,
+     "old_ce": 1.047901839017868
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "surprise gate|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 216,
+     "wall_s": 2.814244160999806,
+     "teach_ce": 1.4982012767417758,
+     "held_ce": 1.6708606084187825,
+     "old_ce": 0.9491615742444992
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 401,
+     "screen_windows": 432,
+     "wall_s": 5.449062030002096,
+     "teach_ce": 1.2891038071875478,
+     "held_ce": 1.5565942128499348,
+     "old_ce": 0.8952019810676575
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 602,
+     "screen_windows": 648,
+     "wall_s": 8.109263618000114,
+     "teach_ce": 1.1464638336032045,
+     "held_ce": 1.5307989120483398,
+     "old_ce": 0.908204160630703
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 793,
+     "screen_windows": 864,
+     "wall_s": 10.7202560049991,
+     "teach_ce": 1.0224104488597197,
+     "held_ce": 1.556452751159668,
+     "old_ce": 0.9070184081792831
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 961,
+     "screen_windows": 1080,
+     "wall_s": 13.116024648999883,
+     "teach_ce": 0.9134310413809383,
+     "held_ce": 1.6068064371744792,
+     "old_ce": 0.9325023591518402
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1121,
+     "screen_windows": 1296,
+     "wall_s": 15.317816602000676,
+     "teach_ce": 0.8020462709314683,
+     "held_ce": 1.6825512250264485,
+     "old_ce": 0.9629486799240112
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1267,
+     "screen_windows": 1512,
+     "wall_s": 17.64098553099757,
+     "teach_ce": 0.6949308993769627,
+     "held_ce": 1.784788449605306,
+     "old_ce": 1.0264180600643158
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1391,
+     "screen_windows": 1728,
+     "wall_s": 19.634767179995833,
+     "teach_ce": 0.6075480358273375,
+     "held_ce": 1.8866440455118816,
+     "old_ce": 1.0851803421974182
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "orthogonal consolidation|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.20688784899903112,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.236371255999984,
+     "teach_ce": 2.6845809712129483,
+     "held_ce": 2.75313663482666,
+     "old_ce": 0.6096914485096931
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.254400859997986,
+     "teach_ce": 2.618136910831227,
+     "held_ce": 2.7013963063557944,
+     "old_ce": 0.609787829220295
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.273193699998956,
+     "teach_ce": 2.5600286558562635,
+     "held_ce": 2.6560001373291016,
+     "old_ce": 0.6099057272076607
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.275980531998357,
+     "teach_ce": 2.5056492300594555,
+     "held_ce": 2.6136207580566406,
+     "old_ce": 0.6100479438900948
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.251318286998867,
+     "teach_ce": 2.4552726558610503,
+     "held_ce": 2.573371728261312,
+     "old_ce": 0.6102116405963898
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.235868773997936,
+     "teach_ce": 2.408491293589274,
+     "held_ce": 2.5351664225260415,
+     "old_ce": 0.6103959232568741
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.207583958999749,
+     "teach_ce": 2.3670888321072447,
+     "held_ce": 2.499445597330729,
+     "old_ce": 0.6106117963790894
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.170051568999043,
+     "teach_ce": 2.3277969453849043,
+     "held_ce": 2.4655625025431314,
+     "old_ce": 0.6108498200774193
+    }
+   ],
+   "protect_s": 0.20688784899903112
+  },
+  "SPOC (gate + consolidation)|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.2014676939979836,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 216,
+     "wall_s": 2.92761777099804,
+     "teach_ce": 2.685604731241862,
+     "held_ce": 2.7553126017252603,
+     "old_ce": 0.6096910908818245
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 403,
+     "screen_windows": 432,
+     "wall_s": 5.479101678000006,
+     "teach_ce": 2.6222558676027785,
+     "held_ce": 2.704962412516276,
+     "old_ce": 0.6097819060087204
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 604,
+     "screen_windows": 648,
+     "wall_s": 8.142211539998243,
+     "teach_ce": 2.5632558710434856,
+     "held_ce": 2.6589115460713706,
+     "old_ce": 0.6098968386650085
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 806,
+     "screen_windows": 864,
+     "wall_s": 10.80143931099883,
+     "teach_ce": 2.508609753029019,
+     "held_ce": 2.616060256958008,
+     "old_ce": 0.6100317388772964
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1005,
+     "screen_windows": 1080,
+     "wall_s": 13.582791271997849,
+     "teach_ce": 2.4594221115112305,
+     "held_ce": 2.5774938265482583,
+     "old_ce": 0.6101889237761497
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1205,
+     "screen_windows": 1296,
+     "wall_s": 16.15908918799687,
+     "teach_ce": 2.4143696205288756,
+     "held_ce": 2.5400845209757485,
+     "old_ce": 0.610367015004158
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1405,
+     "screen_windows": 1512,
+     "wall_s": 18.742015858995728,
+     "teach_ce": 2.373223342147528,
+     "held_ce": 2.5050530433654785,
+     "old_ce": 0.6105697304010391
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1609,
+     "screen_windows": 1728,
+     "wall_s": 21.471932065996953,
+     "teach_ce": 2.3338885026819565,
+     "held_ce": 2.4711995124816895,
+     "old_ce": 0.6108028143644333
+    }
+   ],
+   "protect_s": 0.2014676939979836
+  },
+  "SPOC, alpha 0.1|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.20176782100315904,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 216,
+     "wall_s": 2.877699914002733,
+     "teach_ce": 2.37855266122257,
+     "held_ce": 2.5203682581583657,
+     "old_ce": 0.6110256537795067
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 403,
+     "screen_windows": 432,
+     "wall_s": 5.490429497003788,
+     "teach_ce": 2.1583074027416753,
+     "held_ce": 2.3257266680399575,
+     "old_ce": 0.6138704717159271
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 604,
+     "screen_windows": 648,
+     "wall_s": 8.214529202003177,
+     "teach_ce": 2.0024334496142817,
+     "held_ce": 2.1863760948181152,
+     "old_ce": 0.6183212548494339
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 806,
+     "screen_windows": 864,
+     "wall_s": 10.876482097006374,
+     "teach_ce": 1.8888907432556152,
+     "held_ce": 2.0841010411580405,
+     "old_ce": 0.6233987212181091
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1007,
+     "screen_windows": 1080,
+     "wall_s": 13.53790172900699,
+     "teach_ce": 1.7999518244874244,
+     "held_ce": 2.005736509958903,
+     "old_ce": 0.6293095871806145
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1205,
+     "screen_windows": 1296,
+     "wall_s": 16.252006552007515,
+     "teach_ce": 1.7279255343418496,
+     "held_ce": 1.9434083302815754,
+     "old_ce": 0.6353287622332573
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1405,
+     "screen_windows": 1512,
+     "wall_s": 18.832696058008878,
+     "teach_ce": 1.665259408015831,
+     "held_ce": 1.893932819366455,
+     "old_ce": 0.6416516527533531
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1604,
+     "screen_windows": 1728,
+     "wall_s": 21.511210850007046,
+     "teach_ce": 1.610488452163397,
+     "held_ce": 1.8520738283793132,
+     "old_ce": 0.6477266624569893
+    }
+   ],
+   "protect_s": 0.20176782100315904
+  },
+  "fine-tune, lr/10|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.037062015999254,
+     "teach_ce": 2.2582148009655523,
+     "held_ce": 2.393911838531494,
+     "old_ce": 0.6231664568185806
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.099798941999325,
+     "teach_ce": 1.983734215007109,
+     "held_ce": 2.13609250386556,
+     "old_ce": 0.653401218354702
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.168469883999933,
+     "teach_ce": 1.8223358883577234,
+     "held_ce": 1.97930113474528,
+     "old_ce": 0.6878086775541306
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.215398374999495,
+     "teach_ce": 1.7138604182823032,
+     "held_ce": 1.877392292022705,
+     "old_ce": 0.7184523567557335
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.220362366999325,
+     "teach_ce": 1.6326920471939386,
+     "held_ce": 1.8049008051554363,
+     "old_ce": 0.740774467587471
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.226007499000843,
+     "teach_ce": 1.5672475029440487,
+     "held_ce": 1.7512658437093098,
+     "old_ce": 0.7564872428774834
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.339478592999512,
+     "teach_ce": 1.512832286311131,
+     "held_ce": 1.7088111241658528,
+     "old_ce": 0.7673289105296135
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.389178618999722,
+     "teach_ce": 1.465630998798445,
+     "held_ce": 1.67565123240153,
+     "old_ce": 0.7751067578792572
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "SPOC, alpha 0.03|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.20693910399859305,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 216,
+     "wall_s": 2.885695097997086,
+     "teach_ce": 2.58593936994964,
+     "held_ce": 2.6825955708821616,
+     "old_ce": 0.6098993644118309
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 403,
+     "screen_windows": 432,
+     "wall_s": 5.485960938000062,
+     "teach_ce": 2.4548969642788756,
+     "held_ce": 2.578192392985026,
+     "old_ce": 0.610321931540966
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 604,
+     "screen_windows": 648,
+     "wall_s": 8.226453228999162,
+     "teach_ce": 2.343656063079834,
+     "held_ce": 2.485867500305176,
+     "old_ce": 0.6109435111284256
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 806,
+     "screen_windows": 864,
+     "wall_s": 10.883881794001354,
+     "teach_ce": 2.2507918301750633,
+     "held_ce": 2.4056472778320312,
+     "old_ce": 0.6117419302463531
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1005,
+     "screen_windows": 1080,
+     "wall_s": 13.541683799001476,
+     "teach_ce": 2.173354289110969,
+     "held_ce": 2.3394956588745117,
+     "old_ce": 0.6127434149384499
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1206,
+     "screen_windows": 1296,
+     "wall_s": 16.332406219000404,
+     "teach_ce": 2.1052668141383752,
+     "held_ce": 2.278311570485433,
+     "old_ce": 0.614037275314331
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1406,
+     "screen_windows": 1512,
+     "wall_s": 18.943148055001075,
+     "teach_ce": 2.0500732029185578,
+     "held_ce": 2.2286364237467446,
+     "old_ce": 0.6153671219944954
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1609,
+     "screen_windows": 1728,
+     "wall_s": 21.61987999900157,
+     "teach_ce": 1.9990829205980487,
+     "held_ce": 2.1842190424601235,
+     "old_ce": 0.616921454668045
+    }
+   ],
+   "protect_s": 0.20693910399859305
+  },
+  "SPOC, alpha 0.3|1": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.20274336699731066,
+     "teach_ce": 2.757909849578259,
+     "held_ce": 2.809507687886556,
+     "old_ce": 0.6096110418438911
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 216,
+     "wall_s": 2.9963091429963242,
+     "teach_ce": 2.1224223305197323,
+     "held_ce": 2.2924092610677085,
+     "old_ce": 0.6162146851420403
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 402,
+     "screen_windows": 432,
+     "wall_s": 5.604692720993626,
+     "teach_ce": 1.8635967853022557,
+     "held_ce": 2.054842789967855,
+     "old_ce": 0.6297043412923813
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 605,
+     "screen_windows": 648,
+     "wall_s": 8.274335501992027,
+     "teach_ce": 1.7018471231647567,
+     "held_ce": 1.9153757095336914,
+     "old_ce": 0.6456232368946075
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 808,
+     "screen_windows": 864,
+     "wall_s": 11.014331092992506,
+     "teach_ce": 1.5845223221124387,
+     "held_ce": 1.8244657516479492,
+     "old_ce": 0.6610253378748894
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1009,
+     "screen_windows": 1080,
+     "wall_s": 13.67763921999358,
+     "teach_ce": 1.493455914890065,
+     "held_ce": 1.7645045916239421,
+     "old_ce": 0.674775131046772
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1203,
+     "screen_windows": 1296,
+     "wall_s": 16.43060057499315,
+     "teach_ce": 1.419882755653531,
+     "held_ce": 1.7244138717651367,
+     "old_ce": 0.6862171068787575
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1399,
+     "screen_windows": 1512,
+     "wall_s": 18.996410907995596,
+     "teach_ce": 1.3536212771546607,
+     "held_ce": 1.6922033627827961,
+     "old_ce": 0.6962054744362831
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1595,
+     "screen_windows": 1728,
+     "wall_s": 21.604494779996458,
+     "teach_ce": 1.2941174133151185,
+     "held_ce": 1.6700396537780762,
+     "old_ce": 0.7046857103705406
+    }
+   ],
+   "protect_s": 0.20274336699731066
+  },
+  "fine-tune|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.000875820998772,
+     "teach_ce": 1.4979380906796922,
+     "held_ce": 1.6788910230000813,
+     "old_ce": 0.9208568781614304
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.021847296997294,
+     "teach_ce": 1.2870078928330366,
+     "held_ce": 1.5649399757385254,
+     "old_ce": 0.8899022489786148
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.083704874996329,
+     "teach_ce": 1.148244156556971,
+     "held_ce": 1.542697270711263,
+     "old_ce": 0.892858624458313
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.15642810299687,
+     "teach_ce": 1.0205101686365463,
+     "held_ce": 1.566839377085368,
+     "old_ce": 0.8992434591054916
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.16374659799476,
+     "teach_ce": 0.8907255097931507,
+     "held_ce": 1.632189114888509,
+     "old_ce": 0.9245859757065773
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.177545017995726,
+     "teach_ce": 0.7554833000781489,
+     "held_ce": 1.7366595268249512,
+     "old_ce": 0.9725164249539375
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.247296402994834,
+     "teach_ce": 0.6120983923182768,
+     "held_ce": 1.886825402577718,
+     "old_ce": 1.048286221921444
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.28318658299395,
+     "teach_ce": 0.47166070751115385,
+     "held_ce": 2.0645805994669595,
+     "old_ce": 1.1585704684257507
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "fine-tune, lr/3|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 1.9881390029986505,
+     "teach_ce": 1.8145078210269703,
+     "held_ce": 1.9744653701782227,
+     "old_ce": 0.7095997855067253
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.03771339100058,
+     "teach_ce": 1.569558349310183,
+     "held_ce": 1.7506860097249348,
+     "old_ce": 0.7739381864666939
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.032910802001425,
+     "teach_ce": 1.4372003125209434,
+     "held_ce": 1.656221866607666,
+     "old_ce": 0.7902700379490852
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.036192691000906,
+     "teach_ce": 1.345623913933249,
+     "held_ce": 1.6048035621643066,
+     "old_ce": 0.8032188341021538
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.03561315600382,
+     "teach_ce": 1.273825206008612,
+     "held_ce": 1.583411693572998,
+     "old_ce": 0.8045036941766739
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.063075133002712,
+     "teach_ce": 1.209741419436885,
+     "held_ce": 1.573026180267334,
+     "old_ce": 0.8098477497696877
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.141880348004634,
+     "teach_ce": 1.1504220401539522,
+     "held_ce": 1.5764959653218586,
+     "old_ce": 0.8114401325583458
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.204058161005378,
+     "teach_ce": 1.0928568886775596,
+     "held_ce": 1.5894804000854492,
+     "old_ce": 0.8182624503970146
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "fine-tune, linear layers|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 1.9847177890005696,
+     "teach_ce": 1.5689213322658164,
+     "held_ce": 1.7566461563110352,
+     "old_ce": 0.8518849387764931
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.000927436001803,
+     "teach_ce": 1.3290200326956956,
+     "held_ce": 1.615677038828532,
+     "old_ce": 0.8443425744771957
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.075791809002112,
+     "teach_ce": 1.1822913861742206,
+     "held_ce": 1.5715678532918294,
+     "old_ce": 0.8492820262908936
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.041539287001797,
+     "teach_ce": 1.0564404375412886,
+     "held_ce": 1.5812991460164387,
+     "old_ce": 0.85743697732687
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.034046799002681,
+     "teach_ce": 0.9338065409192852,
+     "held_ce": 1.6241828600565593,
+     "old_ce": 0.8730204254388809
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.040476969999872,
+     "teach_ce": 0.8097098294426414,
+     "held_ce": 1.6913235982259114,
+     "old_ce": 0.9035363420844078
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 13.995662473000266,
+     "teach_ce": 0.6816488107045492,
+     "held_ce": 1.7829653422037761,
+     "old_ce": 0.9503068625926971
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 15.896705656999984,
+     "teach_ce": 0.5534419499191583,
+     "held_ce": 1.891064167022705,
+     "old_ce": 1.0169807225465775
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "surprise gate|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 197,
+     "screen_windows": 216,
+     "wall_s": 2.608612312000332,
+     "teach_ce": 1.5079382915122836,
+     "held_ce": 1.687230110168457,
+     "old_ce": 0.9205397889018059
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 395,
+     "screen_windows": 432,
+     "wall_s": 5.2251582909993886,
+     "teach_ce": 1.298834333232805,
+     "held_ce": 1.5668455759684246,
+     "old_ce": 0.8917571678757668
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 593,
+     "screen_windows": 648,
+     "wall_s": 7.813018568998814,
+     "teach_ce": 1.1615855039334764,
+     "held_ce": 1.544817606608073,
+     "old_ce": 0.8921931087970734
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 784,
+     "screen_windows": 864,
+     "wall_s": 10.388234658999863,
+     "teach_ce": 1.042936362472235,
+     "held_ce": 1.5645872751871746,
+     "old_ce": 0.8960346952080727
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 969,
+     "screen_windows": 1080,
+     "wall_s": 12.989486835998832,
+     "teach_ce": 0.9266504960901597,
+     "held_ce": 1.6215392748514812,
+     "old_ce": 0.9150150716304779
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1136,
+     "screen_windows": 1296,
+     "wall_s": 15.330172526995739,
+     "teach_ce": 0.8172313886530259,
+     "held_ce": 1.7010083198547363,
+     "old_ce": 0.9555012285709381
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1283,
+     "screen_windows": 1512,
+     "wall_s": 17.470697680993908,
+     "teach_ce": 0.7111949032428218,
+     "held_ce": 1.8002227147420247,
+     "old_ce": 1.011174701154232
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1421,
+     "screen_windows": 1728,
+     "wall_s": 19.71186609499273,
+     "teach_ce": 0.61573873314203,
+     "held_ce": 1.9020970662434895,
+     "old_ce": 1.065623089671135
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "orthogonal consolidation|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.19896031499956734,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.183898410999973,
+     "teach_ce": 2.7375571681003943,
+     "held_ce": 2.776484807332357,
+     "old_ce": 0.6168647333979607
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.208933276000607,
+     "teach_ce": 2.663733613257315,
+     "held_ce": 2.7194512685139975,
+     "old_ce": 0.6169454231858253
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.188059121999686,
+     "teach_ce": 2.598501542035271,
+     "held_ce": 2.6692288716634116,
+     "old_ce": 0.61705282330513
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.22041363599783,
+     "teach_ce": 2.5376353544347428,
+     "held_ce": 2.6223320960998535,
+     "old_ce": 0.6171862632036209
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.193673766996653,
+     "teach_ce": 2.4817242528878007,
+     "held_ce": 2.5796645482381186,
+     "old_ce": 0.6173402145504951
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.153080225998565,
+     "teach_ce": 2.4301361383176316,
+     "held_ce": 2.5411062240600586,
+     "old_ce": 0.6175084486603737
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.126031838997733,
+     "teach_ce": 2.3842622345569087,
+     "held_ce": 2.5059080123901367,
+     "old_ce": 0.6177020445466042
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.12678479999886,
+     "teach_ce": 2.3430653553383025,
+     "held_ce": 2.473459243774414,
+     "old_ce": 0.6179159730672836
+    }
+   ],
+   "protect_s": 0.19896031499956734
+  },
+  "SPOC (gate + consolidation)|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.20463171600204078,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 197,
+     "screen_windows": 216,
+     "wall_s": 2.787529858003836,
+     "teach_ce": 2.7401452905991497,
+     "held_ce": 2.7789719899495444,
+     "old_ce": 0.6168618202209473
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 395,
+     "screen_windows": 432,
+     "wall_s": 5.395691991001513,
+     "teach_ce": 2.6701714571784523,
+     "held_ce": 2.724654197692871,
+     "old_ce": 0.6169396489858627
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 596,
+     "screen_windows": 648,
+     "wall_s": 8.128503463001834,
+     "teach_ce": 2.6048913843491497,
+     "held_ce": 2.6739635467529297,
+     "old_ce": 0.6170508563518524
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 797,
+     "screen_windows": 864,
+     "wall_s": 10.774165117003577,
+     "teach_ce": 2.543354558009727,
+     "held_ce": 2.626938501993815,
+     "old_ce": 0.6171766072511673
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 999,
+     "screen_windows": 1080,
+     "wall_s": 13.403787017003197,
+     "teach_ce": 2.487251693127202,
+     "held_ce": 2.5841685930887857,
+     "old_ce": 0.6173224076628685
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1200,
+     "screen_windows": 1296,
+     "wall_s": 16.03728752800089,
+     "teach_ce": 2.435517236298206,
+     "held_ce": 2.5448301633199057,
+     "old_ce": 0.6174918338656425
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1402,
+     "screen_windows": 1512,
+     "wall_s": 18.671059316002356,
+     "teach_ce": 2.389474401287004,
+     "held_ce": 2.5094587008158364,
+     "old_ce": 0.6176798045635223
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1601,
+     "screen_windows": 1728,
+     "wall_s": 21.237026386999787,
+     "teach_ce": 2.3487069466534782,
+     "held_ce": 2.477874437967936,
+     "old_ce": 0.6178808212280273
+    }
+   ],
+   "protect_s": 0.20463171600204078
+  },
+  "SPOC, alpha 0.1|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.2061305720017117,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 197,
+     "screen_windows": 216,
+     "wall_s": 2.7532795300030557,
+     "teach_ce": 2.4074374928193936,
+     "held_ce": 2.5282328923543296,
+     "old_ce": 0.6178814470767975
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 394,
+     "screen_windows": 432,
+     "wall_s": 5.307783789001405,
+     "teach_ce": 2.1761014975753485,
+     "held_ce": 2.3385496139526367,
+     "old_ce": 0.6203152239322662
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 595,
+     "screen_windows": 648,
+     "wall_s": 8.058343794004031,
+     "teach_ce": 2.0152905782063804,
+     "held_ce": 2.1987291971842446,
+     "old_ce": 0.6238210275769234
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 796,
+     "screen_windows": 864,
+     "wall_s": 10.679790176003735,
+     "teach_ce": 1.8918796427109663,
+     "held_ce": 2.0913826624552407,
+     "old_ce": 0.6279131546616554
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 996,
+     "screen_windows": 1080,
+     "wall_s": 13.267685794002318,
+     "teach_ce": 1.7980895416409362,
+     "held_ce": 2.010930061340332,
+     "old_ce": 0.6325847059488297
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1195,
+     "screen_windows": 1296,
+     "wall_s": 15.818414304001635,
+     "teach_ce": 1.7188658901289398,
+     "held_ce": 1.9447348912556965,
+     "old_ce": 0.6378583982586861
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1395,
+     "screen_windows": 1512,
+     "wall_s": 18.36453313700258,
+     "teach_ce": 1.6538885714961034,
+     "held_ce": 1.8915859858194988,
+     "old_ce": 0.6431932970881462
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1593,
+     "screen_windows": 1728,
+     "wall_s": 21.097208783001406,
+     "teach_ce": 1.599500618728937,
+     "held_ce": 1.8497846921284993,
+     "old_ce": 0.648602232336998
+    }
+   ],
+   "protect_s": 0.2061305720017117
+  },
+  "fine-tune, lr/10|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.0,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 204,
+     "screen_windows": 0,
+     "wall_s": 2.0197552169993287,
+     "teach_ce": 2.2862519656910614,
+     "held_ce": 2.406515916188558,
+     "old_ce": 0.6276021674275398
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 408,
+     "screen_windows": 0,
+     "wall_s": 4.0141733279997425,
+     "teach_ce": 2.0049100763657512,
+     "held_ce": 2.1592893600463867,
+     "old_ce": 0.6514086425304413
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 612,
+     "screen_windows": 0,
+     "wall_s": 6.024540821999835,
+     "teach_ce": 1.8348316491818895,
+     "held_ce": 2.0015312830607095,
+     "old_ce": 0.6815075129270554
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 816,
+     "screen_windows": 0,
+     "wall_s": 8.019541427001968,
+     "teach_ce": 1.7201507512260885,
+     "held_ce": 1.8929595947265625,
+     "old_ce": 0.7092689573764801
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 1020,
+     "screen_windows": 0,
+     "wall_s": 10.113980903999618,
+     "teach_ce": 1.636145881578034,
+     "held_ce": 1.8179562886555989,
+     "old_ce": 0.7283394262194633
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1224,
+     "screen_windows": 0,
+     "wall_s": 12.149271901998873,
+     "teach_ce": 1.569910161635455,
+     "held_ce": 1.7621142069498699,
+     "old_ce": 0.7421991229057312
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1428,
+     "screen_windows": 0,
+     "wall_s": 14.133753135996812,
+     "teach_ce": 1.5158758911432004,
+     "held_ce": 1.7192365328470867,
+     "old_ce": 0.7541537061333656
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1632,
+     "screen_windows": 0,
+     "wall_s": 16.135675883993827,
+     "teach_ce": 1.4698962791293275,
+     "held_ce": 1.6866604487101238,
+     "old_ce": 0.7611107677221298
+    }
+   ],
+   "protect_s": 0.0
+  },
+  "SPOC, alpha 0.03|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.20459508399653714,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 197,
+     "screen_windows": 216,
+     "wall_s": 2.7998105809965637,
+     "teach_ce": 2.6301952623853495,
+     "held_ce": 2.6975831985473633,
+     "old_ce": 0.6170102879405022
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 395,
+     "screen_windows": 432,
+     "wall_s": 5.571966892995988,
+     "teach_ce": 2.4853819959303913,
+     "held_ce": 2.585369427998861,
+     "old_ce": 0.617402121424675
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 595,
+     "screen_windows": 648,
+     "wall_s": 8.17074935999699,
+     "teach_ce": 2.365056729784199,
+     "held_ce": 2.4926438331604004,
+     "old_ce": 0.6179354041814804
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 796,
+     "screen_windows": 864,
+     "wall_s": 10.820358959997975,
+     "teach_ce": 2.2668923490187702,
+     "held_ce": 2.4137001037597656,
+     "old_ce": 0.6186523512005806
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 997,
+     "screen_windows": 1080,
+     "wall_s": 13.50920752499951,
+     "teach_ce": 2.188534381342869,
+     "held_ce": 2.3483289082845054,
+     "old_ce": 0.6195250526070595
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1197,
+     "screen_windows": 1296,
+     "wall_s": 16.100579016001575,
+     "teach_ce": 2.1223319652033785,
+     "held_ce": 2.2920422554016113,
+     "old_ce": 0.620502769947052
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1398,
+     "screen_windows": 1512,
+     "wall_s": 18.805429700001696,
+     "teach_ce": 2.0594254662008846,
+     "held_ce": 2.238282044728597,
+     "old_ce": 0.6216193437576294
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1596,
+     "screen_windows": 1728,
+     "wall_s": 21.527770329001214,
+     "teach_ce": 2.0066817414526845,
+     "held_ce": 2.1929256121317544,
+     "old_ce": 0.622786208987236
+    }
+   ],
+   "protect_s": 0.20459508399653714
+  },
+  "SPOC, alpha 0.3|2": {
+   "curve": [
+    {
+     "epoch": 0,
+     "backward_windows": 0,
+     "screen_windows": 0,
+     "wall_s": 0.2036368590015627,
+     "teach_ce": 2.821500105016372,
+     "held_ce": 2.839443842569987,
+     "old_ce": 0.6168092638254166
+    },
+    {
+     "epoch": 1,
+     "backward_windows": 197,
+     "screen_windows": 216,
+     "wall_s": 2.75232785299886,
+     "teach_ce": 2.151009110843434,
+     "held_ce": 2.316017468770345,
+     "old_ce": 0.621909998357296
+    },
+    {
+     "epoch": 2,
+     "backward_windows": 394,
+     "screen_windows": 432,
+     "wall_s": 5.603915554998821,
+     "teach_ce": 1.8738755805819642,
+     "held_ce": 2.069014231363932,
+     "old_ce": 0.6323497667908669
+    },
+    {
+     "epoch": 3,
+     "backward_windows": 595,
+     "screen_windows": 648,
+     "wall_s": 8.293110475999129,
+     "teach_ce": 1.6984210575328154,
+     "held_ce": 1.916709582010905,
+     "old_ce": 0.645632341504097
+    },
+    {
+     "epoch": 4,
+     "backward_windows": 795,
+     "screen_windows": 864,
+     "wall_s": 10.868028681998112,
+     "teach_ce": 1.5836374432432885,
+     "held_ce": 1.8277034759521484,
+     "old_ce": 0.6584228500723839
+    },
+    {
+     "epoch": 5,
+     "backward_windows": 990,
+     "screen_windows": 1080,
+     "wall_s": 13.456853494000825,
+     "teach_ce": 1.496000841552136,
+     "held_ce": 1.7672780354817708,
+     "old_ce": 0.6699872761964798
+    },
+    {
+     "epoch": 6,
+     "backward_windows": 1185,
+     "screen_windows": 1296,
+     "wall_s": 16.077975118001632,
+     "teach_ce": 1.4221946491914637,
+     "held_ce": 1.726755142211914,
+     "old_ce": 0.679408848285675
+    },
+    {
+     "epoch": 7,
+     "backward_windows": 1375,
+     "screen_windows": 1512,
+     "wall_s": 18.572894062002888,
+     "teach_ce": 1.3586373609655045,
+     "held_ce": 1.6967399915059407,
+     "old_ce": 0.6873534396290779
+    },
+    {
+     "epoch": 8,
+     "backward_windows": 1566,
+     "screen_windows": 1728,
+     "wall_s": 21.312818064005114,
+     "teach_ce": 1.3007006925695084,
+     "held_ce": 1.6744089126586914,
+     "old_ce": 0.6941642537713051
+    }
+   ],
+   "protect_s": 0.2036368590015627
+  }
+ }
+}

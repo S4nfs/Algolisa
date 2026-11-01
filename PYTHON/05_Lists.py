@@ -21,6 +21,8 @@ index()     - It returns the index of the first occurrence of the specified elem
 count()     - It returns the number of times a specified element appears in the list
 reverse()   - It reverses the elements of the list in place
 copy()      - It returns a shallow copy of the list
+sum()      - It returns the sum of all elements in the list
+del()      - It deletes an element at the specified index or the entire list if no index is provided
 """
 # Sort------------------------------------------
 a.sort()
@@ -60,6 +62,9 @@ print(a)  # [9, 7, 100, 8, 6, 3, 1]
 # Copy (Shallow copy of list)-------------------
 b = a.copy()
 print(b)  # [9, 7, 100, 8, 6, 3, 1]
+
+s= sum(a)
+print("Sum :", s)  # Sum : 234
 
 # Del (Deletes element, works with only lists & dictionaries but not with tuples & sets as they are immutable )-------------------
 del(a[0])
@@ -102,3 +107,10 @@ last_list = first_list[:-1]
 print("Duplicating List: ", first_list, "\n", second_list, "\n", third_list, "\n", last_list) # [1, 2,3, 4] [100, 2, 3, 4] [1, 2] [1,2,3]
 
 # Also this works with Tuples but not with Sets &  dictionaries as those are unordered
+
+
+# 🍏 Join list
+dataset_1 = ["apple", "banana"]
+dataset_2 = ["cherry", "date"]
+joined_dataset = dataset_1 + dataset_2
+print("Joined list: ", joined_dataset)  # ["apple", "banana", "cherry", "date"]

@@ -1,0 +1,84 @@
+{
+ "gpu_before": {
+  "gpu": "NVIDIA GeForce RTX 5050 Laptop GPU, 580.178.04, 369 MiB, 8151 MiB, 70, 13.87 W, 180 MHz, 9001 MHz, 0x0000000000000000",
+  "compute_apps": "7981, /home/sv/Documents/Algolisa/.venv/bin/python, 160 MiB\n25623, /home/sv/Documents/Algolisa/.venv/bin/python, 184 MiB",
+  "time": "2026-10-11 18:08:24"
+ },
+ "chunk": 2048,
+ "arms": {
+  "S4": {
+   "compile_s": 23.415708754999287,
+   "max_abs_logit_diff_vs_eager": 0.0022013187408447266,
+   "8192": {
+    "compiled_prefill_tok_s": 61964.19071940715,
+    "compiled_peak_mb": 409.32763671875,
+    "compiled_graph_prefill_tok_s": 69109.47397904396,
+    "compiled_graph_peak_mb": 415.74560546875
+   },
+   "32768": {
+    "compiled_prefill_tok_s": 57698.62294895827,
+    "compiled_peak_mb": 409.32763671875,
+    "compiled_graph_prefill_tok_s": 60821.033879562136,
+    "compiled_graph_peak_mb": 415.74560546875
+   },
+   "131072": {
+    "compiled_prefill_tok_s": 61380.68839703489,
+    "compiled_peak_mb": 409.32763671875,
+    "compiled_graph_prefill_tok_s": 65689.59001281486,
+    "compiled_graph_peak_mb": 415.74560546875
+   },
+   "decode_compiled_graph_tok_s_32k": 5783.549921459819
+  },
+  "Mamba": {
+   "compile_s": 3.969921769999928,
+   "max_abs_logit_diff_vs_eager": 0.0017203092575073242,
+   "8192": {
+    "compiled_prefill_tok_s": 439370.4452416244,
+    "compiled_peak_mb": 38.45361328125,
+    "compiled_graph_prefill_tok_s": 463625.33278487815,
+    "compiled_graph_peak_mb": 36.72314453125
+   },
+   "32768": {
+    "compiled_prefill_tok_s": 450654.83580633206,
+    "compiled_peak_mb": 38.45361328125,
+    "compiled_graph_prefill_tok_s": 466621.6630074305,
+    "compiled_graph_peak_mb": 36.72314453125
+   },
+   "131072": {
+    "compiled_prefill_tok_s": 452298.4788852675,
+    "compiled_peak_mb": 38.45361328125,
+    "compiled_graph_prefill_tok_s": 465350.15564754815,
+    "compiled_graph_peak_mb": 36.72314453125
+   },
+   "decode_compiled_graph_tok_s_32k": 8170.8749541590005
+  },
+  "RD-S4 v2": {
+   "compile_s": 40.38703037899904,
+   "max_abs_logit_diff_vs_eager": 0.0018725395202636719,
+   "8192": {
+    "compiled_prefill_tok_s": 280444.6128965346,
+    "compiled_peak_mb": 67.8994140625,
+    "compiled_graph_prefill_tok_s": 302309.1853165884,
+    "compiled_graph_peak_mb": 50.841796875
+   },
+   "32768": {
+    "compiled_prefill_tok_s": 282390.38775379735,
+    "compiled_peak_mb": 69.5458984375,
+    "compiled_graph_prefill_tok_s": 303940.2258813043,
+    "compiled_graph_peak_mb": 50.841796875
+   },
+   "131072": {
+    "compiled_prefill_tok_s": 260492.23747733445,
+    "compiled_peak_mb": 70.19677734375,
+    "compiled_graph_prefill_tok_s": 286153.34314229706,
+    "compiled_graph_peak_mb": 50.841796875
+   },
+   "decode_compiled_graph_tok_s_32k": 3250.9742191715122
+  }
+ },
+ "gpu_after": {
+  "gpu": "NVIDIA GeForce RTX 5050 Laptop GPU, 580.178.04, 1379 MiB, 8151 MiB, 56, 20.22 W, 2767 MHz, 12001 MHz, 0x0000000000000000",
+  "compute_apps": "7981, /home/sv/Documents/Algolisa/.venv/bin/python, 160 MiB\n25623, /home/sv/Documents/Algolisa/.venv/bin/python, 1194 MiB",
+  "time": "2026-10-11 18:13:27"
+ }
+}

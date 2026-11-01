@@ -1,0 +1,164 @@
+{
+ "backprop_seconds": 0.3175337395998213,
+ "grid": {
+  "beta1_gamma0.05_T7": {
+   "beta_out": 1.0,
+   "gamma": 0.05,
+   "T": 7,
+   "seconds": 2.548909328999798,
+   "time_ratio": 8.027207855808065,
+   "cosine_to_backprop": 0.47120851278305054
+  },
+  "beta1_gamma0.05_T24": {
+   "beta_out": 1.0,
+   "gamma": 0.05,
+   "T": 24,
+   "seconds": 7.809907873999691,
+   "time_ratio": 24.595521357328185,
+   "cosine_to_backprop": -0.0024781511165201664
+  },
+  "beta1_gamma0.05_T48": {
+   "beta_out": 1.0,
+   "gamma": 0.05,
+   "T": 48,
+   "seconds": 15.22886113000095,
+   "time_ratio": 47.95982042473172,
+   "cosine_to_backprop": 0.010874845087528229
+  },
+  "beta1_gamma0.1_T7": {
+   "beta_out": 1.0,
+   "gamma": 0.1,
+   "T": 7,
+   "seconds": 2.5600347600011446,
+   "time_ratio": 8.062244860113081,
+   "cosine_to_backprop": 0.24098142981529236
+  },
+  "beta1_gamma0.1_T24": {
+   "beta_out": 1.0,
+   "gamma": 0.1,
+   "T": 24,
+   "seconds": 7.814171381000051,
+   "time_ratio": 24.60894829899975,
+   "cosine_to_backprop": 0.016443923115730286
+  },
+  "beta1_gamma0.1_T48": {
+   "beta_out": 1.0,
+   "gamma": 0.1,
+   "T": 48,
+   "seconds": 15.25558161400113,
+   "time_ratio": 48.04397048712777,
+   "cosine_to_backprop": 0.01707957312464714
+  },
+  "beta1_gamma0.2_T7": {
+   "beta_out": 1.0,
+   "gamma": 0.2,
+   "T": 7,
+   "seconds": 2.5590061340008106,
+   "time_ratio": 8.059005437424863,
+   "cosine_to_backprop": 0.046397075057029724
+  },
+  "beta1_gamma0.2_T24": {
+   "beta_out": 1.0,
+   "gamma": 0.2,
+   "T": 24,
+   "seconds": 7.82314244599911,
+   "time_ratio": 24.637200619557447,
+   "cosine_to_backprop": 0.010583583265542984
+  },
+  "beta1_gamma0.2_T48": {
+   "beta_out": 1.0,
+   "gamma": 0.2,
+   "T": 48,
+   "seconds": 15.263021283000853,
+   "time_ratio": 48.06740002569933,
+   "cosine_to_backprop": 0.019782453775405884
+  },
+  "beta0.01_gamma0.05_T7": {
+   "beta_out": 0.01,
+   "gamma": 0.05,
+   "T": 7,
+   "seconds": 2.558989424000174,
+   "time_ratio": 8.0589528130938,
+   "cosine_to_backprop": 0.01159131433814764
+  },
+  "beta0.01_gamma0.05_T24": {
+   "beta_out": 0.01,
+   "gamma": 0.05,
+   "T": 24,
+   "seconds": 7.830185759001324,
+   "time_ratio": 24.65938192542778,
+   "cosine_to_backprop": -0.03481096774339676
+  },
+  "beta0.01_gamma0.05_T48": {
+   "beta_out": 0.01,
+   "gamma": 0.05,
+   "T": 48,
+   "seconds": 15.274705978999918,
+   "time_ratio": 48.10419830739938,
+   "cosine_to_backprop": -0.02857215888798237
+  },
+  "beta0.01_gamma0.1_T7": {
+   "beta_out": 0.01,
+   "gamma": 0.1,
+   "T": 7,
+   "seconds": 2.5629926930014335,
+   "time_ratio": 8.071560194615854,
+   "cosine_to_backprop": 0.011870119720697403
+  },
+  "beta0.01_gamma0.1_T24": {
+   "beta_out": 0.01,
+   "gamma": 0.1,
+   "T": 24,
+   "seconds": 7.836800215001858,
+   "time_ratio": 24.680212644106273,
+   "cosine_to_backprop": -0.023663170635700226
+  },
+  "beta0.01_gamma0.1_T48": {
+   "beta_out": 0.01,
+   "gamma": 0.1,
+   "T": 48,
+   "seconds": 15.270849467000517,
+   "time_ratio": 48.09205310354085,
+   "cosine_to_backprop": -0.021283164620399475
+  },
+  "beta0.01_gamma0.2_T7": {
+   "beta_out": 0.01,
+   "gamma": 0.2,
+   "T": 7,
+   "seconds": 2.564529418999882,
+   "time_ratio": 8.076399762217035,
+   "cosine_to_backprop": -0.002875992562621832
+  },
+  "beta0.01_gamma0.2_T24": {
+   "beta_out": 0.01,
+   "gamma": 0.2,
+   "T": 24,
+   "seconds": 7.836467164001078,
+   "time_ratio": 24.67916377603575,
+   "cosine_to_backprop": 0.0028013556730002165
+  },
+  "beta0.01_gamma0.2_T48": {
+   "beta_out": 0.01,
+   "gamma": 0.2,
+   "T": 48,
+   "seconds": 15.29623529500168,
+   "time_ratio": 48.17199997165368,
+   "cosine_to_backprop": -0.0006169911939650774
+  }
+ },
+ "best": "beta1_gamma0.05_T7",
+ "race_equal_wallclock": {
+  "backprop": {
+   "updates": 375,
+   "seconds": 123.26327637599752,
+   "select_ce": 0.8961452525109053,
+   "select_acc": 0.7211685180664062
+  },
+  "PC best (beta1_gamma0.05_T7)": {
+   "updates": 47,
+   "seconds": 123.86128664399803,
+   "select_ce": 2.4896593391895294,
+   "select_acc": 0.38178062438964844
+  }
+ }
+}

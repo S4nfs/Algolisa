@@ -1,0 +1,9 @@
+checkpoints/
+data_cache/
+__pycache__/
+*.log
+# RD-S4 v2's design pilots (the v2 source itself lives in the main notebook): keep out of the public repository
+pilot_v2.py
+results/pilots_v2.json
+results/archive_v2_module_2026-10-11/rds4_v2.py
+results/archive_v2_module_2026-10-11/spoc_lm.py

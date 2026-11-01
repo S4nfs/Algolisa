@@ -103,3 +103,4 @@ print(float(a))# 10.0
 print(str(10)) # "10"
 print(bool(a)) # True
 print(bool("")) # False
+
